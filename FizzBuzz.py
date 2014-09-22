@@ -3,13 +3,14 @@ limit = 100
 
 def fizzBuzz(num):
     if num % 3 == 0:
-        if num % 5 == 0:
-            return "fizz buzz"
-        else: return "fizz"
-    elif num % 5 == 0:
+    	return "fizz"
+    if num % 3 and num % 5 == 0:
+        return "fizz buzz"
+    if num % 5 == 0:
         return "buzz"
-    else: return num
+    return num
 
 print "Fizz buzz counting up to %s" % str(limit)
 for i in range(limit):
-	print fizzBuzz(i+1)
+	print fizzBuzz(i+1):while :
+		pass
