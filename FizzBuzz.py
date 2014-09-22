@@ -11,5 +11,5 @@ def fizzBuzz(num):
     else: return num
 
 print "Fizz buzz counting up to %s" % str(limit)
-buzzmod = [fizzBuzz(i) for i in range(1,limit+1)]
-for x in buzzmod: print x
+for i in range(limit):
+	print fizzBuzz(i+1)
