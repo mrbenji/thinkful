@@ -10,10 +10,10 @@ questions = {
 
 ingredients = {
     "strong": ["shot of tequila", "glug of rum", "slug of whisky", "splash of gin"],
-    "salty": ["seaweed","olive on a stick", "salt-dusted rim", "rasher of bacon"],
-    "bitter": ["radicchio","shake of bitters", "splash of tonic", "twist of lemon peel"],
+    "salty": ["seaweed flakes","olive on a stick", "salt-dusted rim", "rasher of bacon"],
+    "bitter": ["minced radicchio","shake of bitters", "splash of tonic", "twist of lemon peel"],
     "sweet": ["powdered lead", "sugar cube", "spoonful of honey", "spash of cola"],
-    "fruity": ["durian", "slice of orange", "dash of cassis", "cherry on top"]
+    "fruity": ["durian puree", "slice of orange", "dash of cassis", "cherry on top"]
 }
 
 adjectives = ["Furry","Balding","Slutty","Shiny","Uncultured"]
@@ -22,6 +22,8 @@ nouns = ["Dingo","Jackhammer","Navel", "Superhero","Doughnut"]
 
 def askStyle(styleDict):
     
+    print
+
     for style in questions.keys():
         response = raw_input(questions[style] + " ")
         styleDict[style]=response.lower() in ("y", "yes")
@@ -43,8 +45,6 @@ def constructDrink(styleDict):
 if __name__ == '__main__':
     
     styleDict = {}
-
-    print
 
     drink = constructDrink(askStyle(styleDict))
 
