@@ -9,32 +9,49 @@ questions = {
 }
 
 ingredients = {
-    "strong": ["glug of rum", "slug of whisky", "splash of gin"],
-    "salty": ["olive on a stick", "salt-dusted rim", "rasher of bacon"],
-    "bitter": ["shake of bitters", "splash of tonic", "twist of lemon peel"],
-    "sweet": ["sugar cube", "spoonful of honey", "spash of cola"],
-    "fruity": ["slice of orange", "dash of cassis", "cherry on top"]
+    "strong": ["shot of tequila", "glug of rum", "slug of whisky", "splash of gin"],
+    "salty": ["seaweed","olive on a stick", "salt-dusted rim", "rasher of bacon"],
+    "bitter": ["radicchio","shake of bitters", "splash of tonic", "twist of lemon peel"],
+    "sweet": ["powdered lead", "sugar cube", "spoonful of honey", "spash of cola"],
+    "fruity": ["durian", "slice of orange", "dash of cassis", "cherry on top"]
 }
 
+adjectives = ["Furry","Balding","Slutty","Shiny","Uncultured"]
+nouns = ["Dingo","Jackhammer","Navel", "Superhero","Doughnut"]
+
+
 def askStyle(styleDict):
+    
     for style in questions.keys():
         response = raw_input(questions[style] + " ")
         styleDict[style]=response.lower() in ("y", "yes")
 
     return styleDict
 
+
 def constructDrink(styleDict):
+    
     drink = []
+    
     for style in styleDict.keys():
         if styleDict[style] == True:
-            randIndex = random.randint( 0, len(ingredients[style])-1 )
-            drink.append(ingredients[style][randIndex])
+            drink.append( random.choice(ingredients[style]) )
+
     return drink
 
+
 if __name__ == '__main__':
+    
     styleDict = {}
+
     print
+
     drink = constructDrink(askStyle(styleDict))
-    print "\nHere ye be... yer drink be having:"
-    for i in drink:
-        print i
+
+    if len(drink) > 1:
+        print '\nHere be yer',
+        print random.choice(adjectives), random.choice(nouns) + ":"
+        for i in drink:
+            print " -", i
+    else: 
+        print "\nYar a picky one!  No drink for ye, then."
