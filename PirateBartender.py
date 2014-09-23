@@ -1,9 +1,9 @@
 import random
 
 questions = {
-    "strong": "Do ye like yer drinks strong?",
-    "salty": "Do ye like it with a salty tang?",
-    "bitter": "Are ye a lubber who likes it bitter?",
+    "strong": "Do ye want yer drink strong?",
+    "salty": "Do ye want it with a salty tang?",
+    "bitter": "Are ye a lubber who wants it bitter?",
     "sweet": "Would ye like a bit of sweetness with yer poison?",
     "fruity": "Are ye one for a fruity finish?"
 }
@@ -45,13 +45,38 @@ def constructDrink(styleDict):
 if __name__ == '__main__':
     
     styleDict = {}
+    numDrunk = 0
 
-    drink = constructDrink(askStyle(styleDict))
+    print "\nAhoy thar... let's find a new drink for ye!"
 
-    if len(drink) > 1:
-        print '\nHere be yer',
-        print random.choice(adjectives), random.choice(nouns) + ":"
-        for i in drink:
-            print " -", i
-    else: 
-        print "\nYar a picky one!  No drink for ye, then."
+    while True:
+
+        if numDrunk > 4:
+            print "\nYer too drunk to even walk the plank... yer cut off!"
+            break
+
+        drink = constructDrink(askStyle(styleDict))
+
+        if len(drink) > 1:
+            numDrunk += 1
+            print '\nHere be yer',
+            print random.choice(adjectives), random.choice(nouns) + ":"
+            for i in drink:
+                print " -", i
+        else: 
+            print "\nYar a picky one!  No drink for ye, then."
+            break
+
+        while True: 
+            print
+            another = raw_input('Would ye like another? ')
+            if another.lower() in ("y","yes","n","no"):
+                break
+
+        if another.lower() in ("y","yes"):
+            print "\nLet's see what grog suits yer fancy this time."
+
+        if another.lower() in ("n","no"):
+            print ("\nOff with ye then, ye scallywag!")
+            break
+
