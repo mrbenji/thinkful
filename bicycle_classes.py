@@ -72,4 +72,9 @@ class Customer(object):
             # Need to access cost via bicycles_owned, not bikeShop.inventory, because bike object has been moved
             print "${:.2f},".format(bikeShop.price_plus_margin(self.bicycles_owned[-1].cost))
             print "and now has ${0:.2f} remaining in their bike fund.\n".format(self.bike_fund)
+        else:
+            print "Unable to buy a Model {} bike from {} for".format(self.name, model_name, bikeShop.name),
+            print "${:.2f}.".format(bikeShop.price_plus_margin(bikeShop.check_inventory(model_name).cost))
+            print "There was a verification error... remaining bike fund is ${:.2f}.".format(self.bike_fund)
+
 
