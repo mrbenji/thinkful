@@ -15,10 +15,10 @@ class BikeShop(object):
         self.inventory = inventory
 
     def price_plus_margin(self, price):
-        return float(price) + float(price) * self.margin
+        return price + price * self.margin
 
-    def add_profit(self, price):
-        self.profit_made += self.price_plus_margin(price) - price
+    def add_profit(self, cost):
+        self.profit_made += cost * self.margin
 
     def check_inventory(self, model_name):
         for nextBike in self.inventory:
