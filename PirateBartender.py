@@ -1,5 +1,3 @@
-### Adding a comment, trying to see how much harder it is to use CLI git ###
-
 import random
 
 questions = {
