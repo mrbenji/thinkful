@@ -1,11 +1,27 @@
-class Bicycle(object):
-    def __init__(self, model_name, weight, cost):
-        self.model_name = model_name
-        self.weight = weight
+class Wheel(object):
+    def __init__(self, name, weight, cost):
+        self.name = name
+        self.weight = float(weight)
+        self.cost = cost
+
+class Frame(object):
+    def __init__(self, name, material, weight, cost):
+        self.name = name
+        self.material = material
+        self.weight = float(weight)
         self.cost = cost
 
 
-class bike_shop(object):
+class Bicycle(object):
+    def __init__(self, model_name, wheel_type, frame):
+        self.model_name = model_name
+        self.wheels = wheel_type
+        self.frame = frame
+        self.cost = frame.cost + wheel_type.cost*2
+        self.weight = frame.weight + wheel_type.weight*2
+
+
+class BikeShop(object):
 
     margin = 0.2
     profit_made = 0.0
@@ -46,10 +62,33 @@ class bike_shop(object):
         return return_dict
 
     def pretty_inventory(self):
+        data = []
         return_string = ""
+
+        data.append(["Model", "Frame", "Wheels", "Weight", "Cost", "Price"])
+        data.append(["-----", "-----", "------", "------", "----", "-----"])
+
         for bike in self.inventory:
-            return_string = return_string + "Model: {} | Weight: {}lbs | Cost: ${:.2f} | Price: ${:.2f}\n".format(bike.model_name, bike.weight, bike.cost, self.price_plus_margin(bike.cost))
+            data.append([
+                bike.model_name,
+                bike.frame.name,
+                bike.wheels.name,
+                "{:.2f} lbs".format(bike.weight),
+                "${:.2f}".format(bike.cost),
+                "${:.2f}".format(self.price_plus_margin(bike.cost))
+            ])
+
+        col_width = 0
+        for row in data:
+            for col in row:
+                if len(col) > col_width:
+                    col_width = len(col)
+
+        for row in data:
+            return_string = return_string + "".join(col.ljust(col_width + 3) for col in row) + "\n"
+
         return return_string
+
 
 class Customer(object):
     bicycles_owned = []
