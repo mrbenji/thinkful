@@ -1,4 +1,4 @@
-from __future__ import (absolute_import, unicode_literals, division)
+from __future__ import (absolute_import, unicode_literals, print_function, division)
 
 import random
 
@@ -53,7 +53,7 @@ def construct_drink():
             random_choice = random.choice(ingredients[next_style])
 
             if stock_used[random_choice] == 0:
-                print "\n Arrr... be right back, need to refill my", random_choice, "supply."
+                print ("\n Arrr... be right back, need to refill my", random_choice, "supply.")
                 stock_used[random_choice] == random.randint(1, 5)
             else:
                 stock_used[random_choice] -= 1
@@ -76,23 +76,22 @@ def serve_customer(name):
     while True:
 
         if customers[name]["numDrunk"] > 4:
-            print "\nYar too drunk to even walk the plank... yar cut off!"
+            print ("\nYar too drunk to even walk the plank... yar cut off!")
             break
 
         if len(customers[name]["regDrinkIngredients"]) > 1:
             customers[name]["numDrunk"] += 1
-            print '\nHere be yer', customers[name]["regDrinkName"], ":"
+            print ('\nHere be yer', customers[name]["regDrinkName"] + ":")
             for i in customers[name]["regDrinkIngredients"]:
-                print " -", i
+                print (" -", i)
         else: 
-            print "\nYar a picky one!  No drink for ye, then."
+            print ("\nYar a picky one!  No drink for ye, then.")
             break
 
         another_drink = ""
 
         while True:
-            print
-            another_drink = raw_input('Would ye like another? ')
+            another_drink = raw_input('\nWould ye like another? ')
             if valid_response(another_drink):
                 break
 
@@ -108,7 +107,7 @@ if __name__ == '__main__':
     while True:
         customer_name = raw_input("\nAhoy thar... what be yar name? ")
         if customer_name not in customers:
-            print "\nWell, " + customer_name + "... let's find a new drink for ye!\n"
+            print ("\nWell, " + customer_name + "... let's find a new drink for ye!\n")
             customers[customer_name]={}
             customers[customer_name]["numDrunk"] = 0
             customers[customer_name]["regDrinkName"] = random.choice(adjectives) + " " + random.choice(nouns)
@@ -119,12 +118,11 @@ if __name__ == '__main__':
         another_customer = ""
 
         while True:
-            print
-            another_customer = raw_input('Is thar another customer to serve? ')
+            another_customer = raw_input('\nIs thar another customer to serve? ')
             if valid_response(another_customer):
                 break
 
         if another_customer.lower() in ("n", "no"):
-            print "\nI'm closing up, then... be gone with ye all!\n"
+            print ("\nI'm closing up, then... be gone with ye all!\n")
             break
 
