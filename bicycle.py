@@ -4,8 +4,8 @@ budget_wheel = bicycle_classes.Wheel("Leadset", 2.29, 54.99)
 midrange_wheel = bicycle_classes.Wheel("IronWorks", 2.16, 149.99)
 highend_wheel = bicycle_classes.Wheel("NanoTube", 1.58, 449.99)
 
-budget_frame = bicycle_classes.Frame("Tank","steel",27.5, 49.99)
-midrange_frame = bicycle_classes.Frame("Sedan","aluminum",23.5, 99.99)
+budget_frame = bicycle_classes.Frame("Tank","steel",28.5, 49.99)
+midrange_frame = bicycle_classes.Frame("Sedan","aluminum",24.5, 99.99)
 highend_frame = bicycle_classes.Frame("Butterfly","carbon",20.5, 599.99)
 
 bike1 = bicycle_classes.Bicycle("M1", budget_wheel, budget_frame)
@@ -14,14 +14,6 @@ bike3 = bicycle_classes.Bicycle("M3", midrange_wheel, budget_frame)
 bike4 = bicycle_classes.Bicycle("M4", midrange_wheel, midrange_frame)
 bike5 = bicycle_classes.Bicycle("M5", midrange_wheel, highend_frame)
 bike6 = bicycle_classes.Bicycle("M6", highend_wheel, highend_frame)
-
-
-# bike1 = bicycle_classes.Bicycle("M1", 32.0, 164.98)
-# bike2 = bicycle_classes.Bicycle("M2", 31.0, 203.98)
-# bike3 = bicycle_classes.Bicycle("M3", 30.5, 317.98)
-# bike4 = bicycle_classes.Bicycle("M4", 29.0, 474.98)
-# bike5 = bicycle_classes.Bicycle("M5", 26.0, 799.98)
-# bike6 = bicycle_classes.Bicycle("M6", 24.0, 975.98)
 
 alpha_bikes = bicycle_classes.BikeShop("Alpha Bikes", [bike1, bike2, bike3, bike4, bike5, bike6])
 
