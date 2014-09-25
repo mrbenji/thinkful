@@ -12,37 +12,50 @@ midrange_wheel = bicycle_classes.Wheel("IronWorks", 2.16, 149.99)
 highend_wheel = bicycle_classes.Wheel("NanoTube", 1.58, 449.99)
 
 budget_frame = bicycle_classes.Frame("Tank", "steel", 28.5, 49.99)
-midrange_frame = bicycle_classes.Frame("Sedan", "aluminum", 24.5, 149.99)
+midrange_frame = bicycle_classes.Frame("Sedan", "aluminum", 24.5, 99.99)
 highend_frame = bicycle_classes.Frame("Butterfly", "carbon", 20.5, 699.99)
 
-bike1 = bicycle_classes.Bicycle("M1", budget_wheel, budget_frame)
-bike2 = bicycle_classes.Bicycle("M2", budget_wheel, midrange_frame)
-bike3 = bicycle_classes.Bicycle("M3", midrange_wheel, budget_frame)
-bike4 = bicycle_classes.Bicycle("M4", midrange_wheel, midrange_frame)
-bike5 = bicycle_classes.Bicycle("M5", midrange_wheel, highend_frame)
-bike6 = bicycle_classes.Bicycle("M6", highend_wheel, highend_frame)
+beta_bikes = bicycle_classes.BicycleManufacturer("Beta Bikes", .10, [
+    bicycle_classes.Bicycle("B1", budget_wheel, budget_frame, "Beta Bikes"),
+    bicycle_classes.Bicycle("B2", budget_wheel, midrange_frame, "Beta Bikes"),
+    bicycle_classes.Bicycle("B3", midrange_wheel, budget_frame, "Beta Bikes")
+])
 
-alpha_bikes = bicycle_classes.BikeShop("Alpha Bikes", [bike1, bike2, bike3, bike4, bike5, bike6])
+omega_bikes = bicycle_classes.BicycleManufacturer("Mega Bikes", .12, [
+    bicycle_classes.Bicycle("M4", midrange_wheel, midrange_frame, "Beta Bikes"),
+    bicycle_classes.Bicycle("M5", midrange_wheel, highend_frame, "Beta Bikes"),
+    bicycle_classes.Bicycle("M6", highend_wheel, highend_frame, "Beta Bikes")
+])
 
-customer1 = bicycle_classes.Customer("Customer1", 200)
-customer2 = bicycle_classes.Customer("Customer2", 500)
-customer3 = bicycle_classes.Customer("Customer3", 1000)
+alpha_bike_shop = bicycle_classes.BikeShop("Alpha Bike Shop", beta_bikes.models_sold + omega_bikes.models_sold)
 
-print ("\n" + ul_string("{} Initial Inventory:".format(alpha_bikes.name), "~"))
-print (alpha_bikes.pretty_inventory())
+customer1 = bicycle_classes.Customer("Ophelia Payne", 300)
+customer2 = bicycle_classes.Customer("Eureka Garlic", 450)
+customer3 = bicycle_classes.Customer("Orson Buggy", 1200)
+
+print ("\n" + ul_string("{} Initial Inventory:".format(alpha_bike_shop.name), "~"))
+print (alpha_bike_shop.pretty_inventory())
 
 for customer in (customer1, customer2, customer3):
     print ("Customer name:", customer.name)
     print ("Bikes in Budget:", end=" ")
-    bikes_in_budget = customer.affordable_bikes(alpha_bikes).keys()
-    bikes_in_budget.sort()
-    print (", ".join(bikes_in_budget) + "\n")
+    bikes_in_budget = customer.affordable_bikes(alpha_bike_shop).keys()
+    if len(bikes_in_budget) > 0:
+        bikes_in_budget.sort()
+        print (", ".join(bikes_in_budget) + "\n")
+    else:
+        print ("None.\n")
 
 for customer in (customer1, customer2, customer3):
-    bike_name = random.choice(customer.affordable_bikes(alpha_bikes).keys())
-    customer.buy_bicycle(alpha_bikes, bike_name)
+    bikes_in_budget = customer.affordable_bikes(alpha_bike_shop).keys()
+    if len(bikes_in_budget) > 0:
+        bike_name = random.choice(bikes_in_budget)
+        customer.buy_bicycle(alpha_bike_shop, bike_name)
+    else:
+        print (customer.name, "doesn't have enough money to buy a bike!")
+        print ("Their bicycle fund still has ${:.02f} remaining.\n".format(customer.bike_fund))
 
-print ("\n" + ul_string("{} Final Inventory:".format(alpha_bikes.name), "~"))
-print (alpha_bikes.pretty_inventory())
+print ("\n" + ul_string("{} Final Inventory:".format(alpha_bike_shop.name), "~"))
+print (alpha_bike_shop.pretty_inventory())
 
-print ("\nProfit made: ${:.2f}".format(alpha_bikes.report_profit()))
+print ("\nProfit made: ${:.2f}".format(alpha_bike_shop.report_profit()))

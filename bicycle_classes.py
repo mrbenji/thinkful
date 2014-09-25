@@ -17,12 +17,21 @@ class Frame(object):
 
 
 class Bicycle(object):
-    def __init__(self, model_name, wheel_type, frame):
+    def __init__(self, model_name, wheel_type, frame, manufacturer):
         self.model_name = model_name
         self.wheels = wheel_type
         self.frame = frame
+        self.manufacturer = manufacturer
+
         self.cost = frame.cost + wheel_type.cost*2
         self.weight = frame.weight + wheel_type.weight*2
+
+
+class BicycleManufacturer(object):
+    def __init__(self, name, margin, models_sold):
+        self.name = name
+        self.margin = margin
+        self.models_sold = models_sold
 
 
 class BikeShop(object):
@@ -113,6 +122,6 @@ class Customer(object):
         if bike_shop.sell_bicycle(self, model_name):
             print ("{} bought a Model {} bike from {} for".format(self.name, model_name, bike_shop.name), end=" ")
             # Need to access cost via bicycles_owned, not bike_shop.inventory, because bike object has been moved
-            print ("${:.2f},".format(bike_shop.price_plus_margin(self.bicycles_owned[-1].cost)), end=" ")
+            print ("${:.2f},".format(bike_shop.price_plus_margin(self.bicycles_owned[-1].cost)))
             print ("and now has ${0:.2f} remaining in their bike fund.\n".format(self.bike_fund))
 
