@@ -1,3 +1,6 @@
+from __future__ import (absolute_import, print_function, unicode_literals, division)
+
+
 class Wheel(object):
     def __init__(self, name, weight, cost):
         self.name = name
@@ -108,8 +111,8 @@ class Customer(object):
 
     def buy_bicycle(self, bike_shop, model_name):
         if bike_shop.sell_bicycle(self, model_name):
-            print "{} bought a Model {} bike from {} for".format(self.name, model_name, bike_shop.name),
+            print ("{} bought a Model {} bike from {} for".format(self.name, model_name, bike_shop.name), end=" ")
             # Need to access cost via bicycles_owned, not bike_shop.inventory, because bike object has been moved
-            print "${:.2f},".format(bike_shop.price_plus_margin(self.bicycles_owned[-1].cost))
-            print "and now has ${0:.2f} remaining in their bike fund.\n".format(self.bike_fund)
+            print ("${:.2f},".format(bike_shop.price_plus_margin(self.bicycles_owned[-1].cost)), end=" ")
+            print ("and now has ${0:.2f} remaining in their bike fund.\n".format(self.bike_fund))
 

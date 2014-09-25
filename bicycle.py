@@ -1,3 +1,5 @@
+from __future__ import (absolute_import, print_function, unicode_literals, division)
+
 import bicycle_classes
 import random
 
@@ -11,7 +13,7 @@ highend_wheel = bicycle_classes.Wheel("NanoTube", 1.58, 449.99)
 
 budget_frame = bicycle_classes.Frame("Tank", "steel", 28.5, 49.99)
 midrange_frame = bicycle_classes.Frame("Sedan", "aluminum", 24.5, 149.99)
-highend_frame = bicycle_classes.Frame("Butterfly", "carbon",20.5, 699.99)
+highend_frame = bicycle_classes.Frame("Butterfly", "carbon", 20.5, 699.99)
 
 bike1 = bicycle_classes.Bicycle("M1", budget_wheel, budget_frame)
 bike2 = bicycle_classes.Bicycle("M2", budget_wheel, midrange_frame)
@@ -26,22 +28,21 @@ customer1 = bicycle_classes.Customer("Customer1", 200)
 customer2 = bicycle_classes.Customer("Customer2", 500)
 customer3 = bicycle_classes.Customer("Customer3", 1000)
 
-print "\n" + ul_string("{} Initial Inventory:".format(alpha_bikes.name), "~")
-print alpha_bikes.pretty_inventory()
+print ("\n" + ul_string("{} Initial Inventory:".format(alpha_bikes.name), "~"))
+print (alpha_bikes.pretty_inventory())
 
 for customer in (customer1, customer2, customer3):
-    print "Customer name:", customer.name
-    print "Bikes in Budget:",
+    print ("Customer name:", customer.name)
+    print ("Bikes in Budget:", end=" ")
     bikes_in_budget = customer.affordable_bikes(alpha_bikes).keys()
     bikes_in_budget.sort()
-    print ", ".join(bikes_in_budget) + "\n"
+    print (", ".join(bikes_in_budget) + "\n")
 
 for customer in (customer1, customer2, customer3):
     bike_name = random.choice(customer.affordable_bikes(alpha_bikes).keys())
-    customer.buy_bicycle(alpha_bikes,bike_name)
+    customer.buy_bicycle(alpha_bikes, bike_name)
 
-print "\n" + ul_string("{} Final Inventory:".format(alpha_bikes.name), "~")
-print alpha_bikes.pretty_inventory()
+print ("\n" + ul_string("{} Final Inventory:".format(alpha_bikes.name), "~"))
+print (alpha_bikes.pretty_inventory())
 
-print "\nProfit made: ${:.2f}".format(alpha_bikes.report_profit())
-
+print ("\nProfit made: ${:.2f}".format(alpha_bikes.report_profit()))
