@@ -1,5 +1,9 @@
 import bicycle_classes, random
 
+
+def ul_string(string_to_ul, ul_char = "-"):
+    return str(string_to_ul) + "\n" + (ul_char * len(string_to_ul))
+
 budget_wheel = bicycle_classes.Wheel("Leadset", 2.29, 54.99)
 midrange_wheel = bicycle_classes.Wheel("IronWorks", 2.16, 149.99)
 highend_wheel = bicycle_classes.Wheel("NanoTube", 1.58, 449.99)
@@ -21,7 +25,7 @@ customer1 = bicycle_classes.Customer("Customer1",200)
 customer2 = bicycle_classes.Customer("Customer2",500)
 customer3 = bicycle_classes.Customer("Customer3",1000)
 
-print "\nInitial inventory:\n------------------"
+print "\n" + ul_string("{} Initial Inventory:".format(alpha_bikes.name), "~")
 print alpha_bikes.pretty_inventory()
 
 for customer in (customer1, customer2, customer3):
@@ -35,7 +39,7 @@ for customer in (customer1, customer2, customer3):
     bike_name = random.choice(customer.affordable_bikes(alpha_bikes).keys())
     customer.buy_bicycle(alpha_bikes,bike_name)
 
-print "\nFinal inventory:\n\n"
+print "\n" + ul_string("{} Final Inventory:".format(alpha_bikes.name), "~")
 print alpha_bikes.pretty_inventory()
 
 print "\nProfit made: ${:.2f}".format(alpha_bikes.report_profit())
