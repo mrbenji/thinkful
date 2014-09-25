@@ -37,12 +37,10 @@ print ("\n" + ul_string("{} Initial Inventory:".format(alpha_bike_shop.name), "~
 print (alpha_bike_shop.pretty_inventory())
 
 for customer in (customer1, customer2, customer3):
-    print ("Customer name:", customer.name)
-    print ("Bikes in Budget:", end=" ")
     bikes_in_budget = customer.affordable_bikes(alpha_bike_shop).keys()
     if len(bikes_in_budget) > 0:
         bikes_in_budget.sort()
-        print (", ".join(bikes_in_budget) + "\n")
+        print ("Customer name (Bikes in Budget): {} ({})".format(customer.name, ", ".join(bikes_in_budget)) + "\n")
     else:
         print ("None.\n")
 
