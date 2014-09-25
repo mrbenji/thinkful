@@ -5,8 +5,8 @@ midrange_wheel = bicycle_classes.Wheel("IronWorks", 2.16, 149.99)
 highend_wheel = bicycle_classes.Wheel("NanoTube", 1.58, 449.99)
 
 budget_frame = bicycle_classes.Frame("Tank","steel",28.5, 49.99)
-midrange_frame = bicycle_classes.Frame("Sedan","aluminum",24.5, 99.99)
-highend_frame = bicycle_classes.Frame("Butterfly","carbon",20.5, 599.99)
+midrange_frame = bicycle_classes.Frame("Sedan","aluminum",24.5, 149.99)
+highend_frame = bicycle_classes.Frame("Butterfly","carbon",20.5, 699.99)
 
 bike1 = bicycle_classes.Bicycle("M1", budget_wheel, budget_frame)
 bike2 = bicycle_classes.Bicycle("M2", budget_wheel, midrange_frame)
