@@ -4,6 +4,7 @@ class Wheel(object):
         self.weight = float(weight)
         self.cost = cost
 
+
 class Frame(object):
     def __init__(self, name, material, weight, cost):
         self.name = name
@@ -97,7 +98,7 @@ class Customer(object):
         self.name = name
         self.bike_fund = float(bike_fund)
 
-    def affordable_bikes(self,bike_shop):
+    def affordable_bikes(self, bike_shop):
         return_dict = {}
         price_dict = bike_shop.prices()
         for next_bike_name in price_dict:
@@ -105,8 +106,8 @@ class Customer(object):
                 return_dict[next_bike_name] = price_dict[next_bike_name]
         return return_dict
 
-    def buy_bicycle(self,bike_shop,model_name):
-        if bike_shop.sell_bicycle(self,model_name):
+    def buy_bicycle(self, bike_shop, model_name):
+        if bike_shop.sell_bicycle(self, model_name):
             print "{} bought a Model {} bike from {} for".format(self.name, model_name, bike_shop.name),
             # Need to access cost via bicycles_owned, not bike_shop.inventory, because bike object has been moved
             print "${:.2f},".format(bike_shop.price_plus_margin(self.bicycles_owned[-1].cost))
