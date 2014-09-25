@@ -1,3 +1,5 @@
+from __future__ import (absolute_import, unicode_literals, division)
+
 import random
 
 questions = {
@@ -10,80 +12,91 @@ questions = {
 
 ingredients = {
     "strong": ["shot of tequila", "glug of rum", "slug of whisky", "splash of gin"],
-    "salty": ["seaweed flakes","olive on a stick", "salt-dusted rim", "rasher of bacon"],
-    "bitter": ["minced radicchio","shake of bitters", "splash of tonic", "twist of lemon peel"],
+    "salty": ["seaweed flakes", "olive on a stick", "salt-dusted rim", "rasher of bacon"],
+    "bitter": ["minced radicchio", "shake of bitters", "splash of tonic", "twist of lemon peel"],
     "sweet": ["powdered lead", "sugar cube", "spoonful of honey", "spash of cola"],
     "fruity": ["durian puree", "slice of orange", "dash of cassis", "cherry on top"]
 }
 
-stockUsed = {}
+stock_used = {}
 
 for style in ingredients:
     for ingredient in ingredients[style]:
-        stockUsed[ingredient] = random.randint(1,6)
+        stock_used[ingredient] = random.randint(1, 6)
 
-adjectives = ["Furry","Balding","Slutty","Shiny","Uncultured"]
-nouns = ["Dingo","Jackhammer","Navel", "Superhero","Doughnut"]
+adjectives = ["Furry", "Balding", "Slutty", "Shiny", "Uncultured"]
+nouns = ["Dingo", "Jackhammer", "Navel", "Superhero", "Doughnut"]
 
 customers = {}
 
-def askStyle(styleDict):
+
+def ask_style():
     
-    print
+    style_dict = {}
 
-    for style in questions.keys():
-        response = raw_input(questions[style] + " ")
-        styleDict[style]=response.lower() in ("y", "yes")
+    for next_style in questions.keys():
+        response = raw_input(questions[next_style] + " ")
+        style_dict[next_style]=response.lower() in ("y", "yes")
 
-    return styleDict
+    return style_dict
 
 
-def constructDrink(styleDict):
+def construct_drink():
     
+    style_dict = ask_style()
     drink = []
-    
-    for style in styleDict.keys():
 
-        if styleDict[style] == True:
+    for next_style in style_dict.keys():
 
-            randomChoice = random.choice(ingredients[style])
+        if style_dict[next_style] is True:
 
-            if stockUsed[randomChoice] == 0:
-                print "\n Arrr... be right back, need to refill my", randomChoice, "supply."
-                stockUsed[randomChoice] == random.randint(1,5)
+            random_choice = random.choice(ingredients[next_style])
+
+            if stock_used[random_choice] == 0:
+                print "\n Arrr... be right back, need to refill my", random_choice, "supply."
+                stock_used[random_choice] == random.randint(1, 5)
             else:
-                stockUsed[randomChoice] -= 1
+                stock_used[random_choice] -= 1
 
-            drink.append(randomChoice)
-            if randomChoice in stockUsed:
-                stockUsed 
+            drink.append(random_choice)
 
     return drink
 
-def serveCustomer(customer_name):
+
+def valid_response(response):
+
+    if response.lower() in ("y", "yes", "n", "no"):
+        return True
+    else:
+        return False
+
+
+def serve_customer(name):
 
     while True:
 
-        if customers[customer_name]["numDrunk"] > 4:
+        if customers[name]["numDrunk"] > 4:
             print "\nYar too drunk to even walk the plank... yar cut off!"
             break
 
-        if len( customers[customer_name]["regDrinkIngredients"] ) > 1:
-            customers[customer_name]["numDrunk"] += 1
-            print '\nHere be yer', customers[customer_name]["regDrinkName"]
-            for i in customers[customer_name]["regDrinkIngredients"]:
+        if len(customers[name]["regDrinkIngredients"]) > 1:
+            customers[name]["numDrunk"] += 1
+            print '\nHere be yer', customers[name]["regDrinkName"], ":"
+            for i in customers[name]["regDrinkIngredients"]:
                 print " -", i
         else: 
             print "\nYar a picky one!  No drink for ye, then."
             break
 
-        while True: 
+        another_drink = ""
+
+        while True:
             print
-            another = raw_input('Would ye like another? ')
-            if another.lower() in ("y","yes","n","no"):
+            another_drink = raw_input('Would ye like another? ')
+            if valid_response(another_drink):
                 break
 
-        if another.lower() in ("n","no"):
+        if another_drink.lower() in ("n", "no"):
             print ("\nOff with ye then, ye scallywag!")
             break
 
@@ -92,28 +105,26 @@ def serveCustomer(customer_name):
 
 if __name__ == '__main__':
     
-    styleDict = {}
-
     while True:
         customer_name = raw_input("\nAhoy thar... what be yar name? ")
         if customer_name not in customers:
-            print "\nWell, " + customer_name + "... let's find a new drink for ye!"
+            print "\nWell, " + customer_name + "... let's find a new drink for ye!\n"
             customers[customer_name]={}
-            customers[customer_name]["numDrunk"]=0
-            customers[customer_name]["regDrinkName"]=random.choice(adjectives) + " " + random.choice(nouns)
-            customers[customer_name]["regDrinkIngredients"]=constructDrink(askStyle(styleDict))
+            customers[customer_name]["numDrunk"] = 0
+            customers[customer_name]["regDrinkName"] = random.choice(adjectives) + " " + random.choice(nouns)
+            customers[customer_name]["regDrinkIngredients"] = construct_drink()
 
-        serveCustomer(customer_name) 
+        serve_customer(customer_name) 
 
-        while True: 
+        another_customer = ""
+
+        while True:
             print
-            another = raw_input('Is thar another customer to serve? ')
-            if another.lower() in ("y","yes","n","no"):
+            another_customer = raw_input('Is thar another customer to serve? ')
+            if valid_response(another_customer):
                 break
 
-        if another.lower() in ("n","no"):
-            print ("\nI'm closing up, then... be gone with ye all!")
+        if another_customer.lower() in ("n", "no"):
+            print "\nI'm closing up, then... be gone with ye all!\n"
             break
-
-
 
