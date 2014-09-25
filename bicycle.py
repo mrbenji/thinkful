@@ -14,7 +14,7 @@ customer2 = bicycle_classes.Customer("Customer2",500)
 customer3 = bicycle_classes.Customer("Customer3",1000)
 
 print "\nInitial inventory:\n------------------"
-print alpha_bikes.prettyInventory()
+print alpha_bikes.pretty_inventory()
 
 for customer in (customer1, customer2, customer3):
     print "Customer name:", customer.name
@@ -28,6 +28,7 @@ for customer in (customer1, customer2, customer3):
     customer.buy_bicycle(alpha_bikes,bike_name)
 
 print "\nFinal inventory:\n----------------"
-print alpha_bikes.prettyInventory()
+print alpha_bikes.pretty_inventory()
 
 print "\nProfit made: ${:.2f}".format(alpha_bikes.report_profit())
+
