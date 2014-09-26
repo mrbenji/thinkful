@@ -4,8 +4,8 @@ import re
 
 def pretty_money(amount):
     """
-    Returns integer/float as US-currency-formatted string.
-    Ex. 1289 -> "$1,289.00" or 75.98 -> "$75.98"
+    Return integer or float as US-currency-formatted string.
+    Ex. 1289 -> "$1,289.00" and 75.98 -> "$75.98"
     Will not work on numbers over 999,999.99.
     :param amount: integer or float to format
     :returns: formatted string
@@ -16,8 +16,8 @@ def pretty_money(amount):
 def pretty_table(data, padding=2):
     """
     "Pretty print" a table to a returned string, with cols as narrow as possible.
-
-    :param data: list of lists (rows that are each a list of columns)
+    :param data: nested list representing a table (list of rows that are each a list of columns)
+    :param padding: minimum space to include between columns
     :return: a multi-line string containing a formatted table
     """
     return_string = ""
@@ -33,9 +33,10 @@ def pretty_table(data, padding=2):
     for row in data:
         col_num = 0
         for col in row:
-            return_string = return_string + col.ljust(col_widths[col_num]+padding)
+            return_string += col.ljust(col_widths[col_num]+padding)
             col_num += 1
         return_string += "\n"
+
     return return_string
 
 
