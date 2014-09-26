@@ -3,6 +3,13 @@ import re
 
 
 def pretty_money(amount):
+    """
+    Returns integer/float as US-currency-formatted string.
+    Ex. 1289 -> "$1,289.00" or 75.98 -> "$75.98"
+    Will not work on numbers over 999,999.99.
+    :param amount: integer or float to format
+    :returns: formatted string
+    """
     return re.sub(r'(\d)+(\d\d\d)(\.\d\d$)', r'\1,\2\3', "${:.2f}".format(amount))
 
 

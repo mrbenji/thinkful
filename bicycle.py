@@ -7,6 +7,13 @@ from bicycle_classes import pretty_money
 
 
 def ul_string(string_to_ul, ul_char="-"):
+    """
+    Returns a 1-line string in "underlined" form.
+    Does not work properly on strings containing "\n"
+    :param string_to_ul: input string
+    :param ul_char: character to use for "underlining," defaults to "-"
+    :returns: The original string + "\n" + len(string_to_ul) of ul_char
+    """
     return str(string_to_ul) + "\n" + (ul_char * len(string_to_ul))
 
 budget_wheel = bicycle_classes.Wheel("Leadset", 2.29, 54.99)
