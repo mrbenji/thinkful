@@ -20,11 +20,24 @@ def pretty_table(data, padding=2):
     :param padding: minimum space to include between columns
     :return: a multi-line string containing a formatted table
     """
+    error_string = "pretty_table() encountered a improperly-formatted table.\n"
+    error_string += "Expected a list of rows, every row a list of the same number of columns.\n"
+
     return_string = ""
+
+    # sanity check... is this a list of lists?
+    if not (type(data) is list and type(data[0]) is list):
+        return error_string
 
     col_widths = [0 for col in range(len(data[0]))]
     for row in data:
+
+        # every row should have the same number of columns
+        if len(row) != len(col_widths):
+            return error_string
+
         col_num = 0
+
         for col in row:
             if len(col) > col_widths[col_num]:
                 col_widths[col_num] = len(col)
