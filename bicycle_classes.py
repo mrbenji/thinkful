@@ -9,24 +9,28 @@ def pretty_money(amount):
 
     Caveats:
     - Will not work properly if amount > 999,999.99
-    - Requires "re" module
+    - Requires "re" module (regular expressions)
 
     :param amount: integer or float to format
     :returns: formatted string
     """
-    return re.sub(r'(\d)+(\d\d\d)(\.\d\d$)', r'\1,\2\3', "${:.2f}".format(amount))
+    # Add a $ sign before amount, and require two digits to the right of the decimal.
+    return_string = "${:.2f}".format(amount)
+
+    # If there are more than 3 digits to the left of the decimal, insert a comma before the last 3.
+    return re.sub(r'(\d)+(\d\d\d)(\.\d\d)$', r'\1,\2\3', return_string)
 
 
 def pretty_table(data, padding=2):
     """
-    "Pretty print" a table to a returned string, with cols as narrow as possible.
+    "Pretty print" a table to a multi-line string, with cols as narrow as possible.
 
     :param data: nested list representing a table (list of rows that are each a list of columns)
     :param padding: minimum space to include between columns
-    :return: a multi-line string containing a formatted table
+    :returns: a multi-line string containing a formatted table
     """
-    error_string = "pretty_table() encountered a improperly-formatted table.\n"
-    error_string += "Expected a list of rows, every row a list of the same number of columns.\n"
+    error_string = "pretty_table() encountered an improperly-formatted table.\n"
+    error_string += "Expected a list of rows, with every row a list of the same number of columns.\n"
 
     return_string = ""
 
@@ -34,24 +38,27 @@ def pretty_table(data, padding=2):
     if not (type(data) is list and type(data[0]) is list):
         return error_string
 
-    col_widths = [0 for col in range(len(data[0]))]
+    # make max_col_widths a list of as many 0's as there are columns in the table
+    max_col_widths = [0] * len(data[0])
+
     for row in data:
 
         # every row should have the same number of columns
-        if len(row) != len(col_widths):
+        if len(row) != len(data[0]):
             return error_string
 
         col_num = 0
 
+        # if a column is wider in this row than in previous rows, reset this column's max width
         for col in row:
-            if len(col) > col_widths[col_num]:
-                col_widths[col_num] = len(col)
+            if len(col) > max_col_widths[col_num]:
+                max_col_widths[col_num] = len(col)
             col_num += 1
 
     for row in data:
         col_num = 0
         for col in row:
-            return_string += col.ljust(col_widths[col_num]+padding)
+            return_string += col.ljust(max_col_widths[col_num]+padding)
             col_num += 1
         return_string += "\n"
 
