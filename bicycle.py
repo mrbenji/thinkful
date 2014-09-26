@@ -1,7 +1,9 @@
 from __future__ import (absolute_import, print_function, unicode_literals, division)
 
-import bicycle_classes
 import random
+
+import bicycle_classes
+from bicycle_classes import pretty_money
 
 
 def ul_string(string_to_ul, ul_char="-"):
@@ -16,15 +18,15 @@ midrange_frame = bicycle_classes.Frame("Sedan", "aluminum", 24.5, 99.99)
 highend_frame = bicycle_classes.Frame("Butterfly", "carbon", 20.5, 699.99)
 
 weeble_bikes = bicycle_classes.BicycleManufacturer("Weeble Bikes", .10, [
-    bicycle_classes.Bicycle("B1", budget_wheel, budget_frame, "Weeble Bikes"),
-    bicycle_classes.Bicycle("B2", budget_wheel, midrange_frame, "Weeble Bikes"),
-    bicycle_classes.Bicycle("B3", midrange_wheel, budget_frame, "Weeble Bikes")
+    bicycle_classes.Bicycle("E1", budget_wheel, budget_frame, "Weeble Bikes"),
+    bicycle_classes.Bicycle("E2", budget_wheel, midrange_frame, "Weeble Bikes"),
+    bicycle_classes.Bicycle("E3", midrange_wheel, budget_frame, "Weeble Bikes")
 ])
 
 weasel_bikes = bicycle_classes.BicycleManufacturer("Weasel Bikes", .12, [
-    bicycle_classes.Bicycle("M4", midrange_wheel, midrange_frame, "Weasel Bikes"),
-    bicycle_classes.Bicycle("M5", midrange_wheel, highend_frame, "Weasel Bikes"),
-    bicycle_classes.Bicycle("M6", highend_wheel, highend_frame, "Weasel Bikes")
+    bicycle_classes.Bicycle("A4", midrange_wheel, midrange_frame, "Weasel Bikes"),
+    bicycle_classes.Bicycle("A5", midrange_wheel, highend_frame, "Weasel Bikes"),
+    bicycle_classes.Bicycle("A6", highend_wheel, highend_frame, "Weasel Bikes")
 ])
 
 alpha_bike_shop = bicycle_classes.BikeShop("Alpha Bike Shop", weeble_bikes.models_sold + weasel_bikes.models_sold)
@@ -51,9 +53,9 @@ for customer in (customer1, customer2, customer3):
         customer.buy_bicycle(alpha_bike_shop, bike_name)
     else:
         print (customer.name, "doesn't have enough money to buy a bike!")
-        print ("Their bicycle fund still has ${:.02f} remaining.\n".format(customer.bike_fund))
+        print ("Their bicycle fund still has {} remaining.\n".format(pretty_money(customer.bike_fund)))
 
 print ("\n" + ul_string("{} Final Inventory:".format(alpha_bike_shop.name), "~"))
 print (alpha_bike_shop.pretty_inventory())
 
-print ("\nProfit made: ${:.2f}".format(alpha_bike_shop.report_profit()))
+print ("\nProfit made: {}".format(pretty_money(alpha_bike_shop.report_profit())))

@@ -1,4 +1,9 @@
 from __future__ import (absolute_import, print_function, unicode_literals, division)
+import re
+
+
+def pretty_money(amount):
+    return re.sub(r'(\d)+(\d\d\d)(\.\d\d$)', r'\1,\2\3', "${:.2f}".format(amount))
 
 
 class Wheel(object):
@@ -78,28 +83,34 @@ class BikeShop(object):
         data = []
         return_string = ""
 
-        data.append(["Model", "Frame", "Wheels", "Weight", "Cost", "Price"])
-        data.append(["-----", "-----", "------", "------", "----", "-----"])
+        data.append(["MFG", "Model", "Frame", "Wheels", "Weight", "Cost", "Price"])
+        data.append(["---", "-----", "-----", "------", "------", "----", "-----"])
 
         for bike in self.inventory:
             data.append([
+                bike.manufacturer,
                 bike.model_name,
                 bike.frame.name,
                 bike.wheels.name,
                 "{:.2f} lbs".format(bike.weight),
-                "${:.2f}".format(bike.cost),
-                "${:.2f}".format(self.price_plus_margin(bike.cost))
+                pretty_money(bike.cost),
+                pretty_money(self.price_plus_margin(bike.cost))
             ])
 
-        col_width = 0
+        col_widths = [0 for col in range(len(data[0]))]
         for row in data:
+            col_num = 0
             for col in row:
-                if len(col) > col_width:
-                    col_width = len(col)
+                if len(col) > col_widths[col_num]:
+                    col_widths[col_num] = len(col)
+                col_num += 1
 
         for row in data:
-            return_string = return_string + "".join(col.ljust(col_width + 3) for col in row) + "\n"
-
+            col_num = 0
+            for col in row:
+                return_string = return_string + col.ljust(col_widths[col_num]+2)
+                col_num += 1
+            return_string += "\n"
         return return_string
 
 
@@ -122,6 +133,6 @@ class Customer(object):
         if bike_shop.sell_bicycle(self, model_name):
             print ("{} bought a Model {} bike from {} for".format(self.name, model_name, bike_shop.name), end=" ")
             # Need to access cost via bicycles_owned, not bike_shop.inventory, because bike object has been moved
-            print ("${:.2f},".format(bike_shop.price_plus_margin(self.bicycles_owned[-1].cost)))
-            print ("and now has ${0:.2f} remaining in their bike fund.\n".format(self.bike_fund))
+            print ("{},".format(pretty_money(bike_shop.price_plus_margin(self.bicycles_owned[-1].cost))))
+            print ("and now has {} remaining in their bike fund.\n".format(pretty_money(self.bike_fund)))
 
