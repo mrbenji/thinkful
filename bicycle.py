@@ -15,19 +15,19 @@ budget_frame = bicycle_classes.Frame("Tank", "steel", 28.5, 49.99)
 midrange_frame = bicycle_classes.Frame("Sedan", "aluminum", 24.5, 99.99)
 highend_frame = bicycle_classes.Frame("Butterfly", "carbon", 20.5, 699.99)
 
-beta_bikes = bicycle_classes.BicycleManufacturer("Beta Bikes", .10, [
-    bicycle_classes.Bicycle("B1", budget_wheel, budget_frame, "Beta Bikes"),
-    bicycle_classes.Bicycle("B2", budget_wheel, midrange_frame, "Beta Bikes"),
-    bicycle_classes.Bicycle("B3", midrange_wheel, budget_frame, "Beta Bikes")
+weeble_bikes = bicycle_classes.BicycleManufacturer("Weeble Bikes", .10, [
+    bicycle_classes.Bicycle("B1", budget_wheel, budget_frame, "Weeble Bikes"),
+    bicycle_classes.Bicycle("B2", budget_wheel, midrange_frame, "Weeble Bikes"),
+    bicycle_classes.Bicycle("B3", midrange_wheel, budget_frame, "Weeble Bikes")
 ])
 
-omega_bikes = bicycle_classes.BicycleManufacturer("Mega Bikes", .12, [
-    bicycle_classes.Bicycle("M4", midrange_wheel, midrange_frame, "Beta Bikes"),
-    bicycle_classes.Bicycle("M5", midrange_wheel, highend_frame, "Beta Bikes"),
-    bicycle_classes.Bicycle("M6", highend_wheel, highend_frame, "Beta Bikes")
+weasel_bikes = bicycle_classes.BicycleManufacturer("Weasel Bikes", .12, [
+    bicycle_classes.Bicycle("M4", midrange_wheel, midrange_frame, "Weasel Bikes"),
+    bicycle_classes.Bicycle("M5", midrange_wheel, highend_frame, "Weasel Bikes"),
+    bicycle_classes.Bicycle("M6", highend_wheel, highend_frame, "Weasel Bikes")
 ])
 
-alpha_bike_shop = bicycle_classes.BikeShop("Alpha Bike Shop", beta_bikes.models_sold + omega_bikes.models_sold)
+alpha_bike_shop = bicycle_classes.BikeShop("Alpha Bike Shop", weeble_bikes.models_sold + weasel_bikes.models_sold)
 
 customer1 = bicycle_classes.Customer("Ophelia Payne", 300)
 customer2 = bicycle_classes.Customer("Eureka Garlic", 450)
