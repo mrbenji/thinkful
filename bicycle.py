@@ -5,6 +5,8 @@ import random
 import bicycle_classes
 from bicycle_classes import pretty_money
 
+BUY_RANDOM_BIKE = False
+
 
 def ul_string(string_to_ul, ul_char="-"):
     """
@@ -58,8 +60,10 @@ for customer in customers:
 for customer in customers:
     bikes_in_budget = customer.affordable_bikes(alpha_bike_shop).keys()
     if len(bikes_in_budget) > 0:
-        # bike_name = random.choice(bikes_in_budget)
-        bike_name = customer.most_expensive_affordable_bike(alpha_bike_shop)
+        if BUY_RANDOM_BIKE is True:
+            bike_name = random.choice(bikes_in_budget)
+        else:
+            bike_name = customer.most_expensive_affordable_bike(alpha_bike_shop)
         customer.buy_bicycle(alpha_bike_shop, bike_name)
     else:
         print (customer.name, "doesn't have enough money to buy a bike!")
