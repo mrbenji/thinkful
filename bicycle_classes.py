@@ -136,6 +136,17 @@ class Customer(object):
                 return_dict[next_bike_name] = price_dict[next_bike_name]
         return return_dict
 
+    def most_expensive_affordable_bike(self, bike_shop):
+        max_price = 0
+        return_string = ""
+        bike_dict = self.affordable_bikes(bike_shop)
+        for key in bike_dict.keys():
+            if bike_dict[key] > max_price:
+                max_price = bike_dict[key]
+                return_string = key
+
+        return return_string
+
     def buy_bicycle(self, bike_shop, model_name):
         if bike_shop.sell_bicycle(self, model_name):
             print ("{} bought a Model {} bike from {} for".format(self.name, model_name, bike_shop.name), end=" ")

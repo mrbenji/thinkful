@@ -40,7 +40,7 @@ alpha_bike_shop = bicycle_classes.BikeShop("Alpha Bike Shop", weeble_bikes.model
 
 customers = [
     bicycle_classes.Customer("Ophelia Payne", 300),
-    bicycle_classes.Customer("Eureka Garlic", 450),
+    bicycle_classes.Customer("Eureka Garlic", 500),
     bicycle_classes.Customer("Orson Buggy", 1200)
 ]
 
@@ -58,7 +58,8 @@ for customer in customers:
 for customer in customers:
     bikes_in_budget = customer.affordable_bikes(alpha_bike_shop).keys()
     if len(bikes_in_budget) > 0:
-        bike_name = random.choice(bikes_in_budget)
+        # bike_name = random.choice(bikes_in_budget)
+        bike_name = customer.most_expensive_affordable_bike(alpha_bike_shop)
         customer.buy_bicycle(alpha_bike_shop, bike_name)
     else:
         print (customer.name, "doesn't have enough money to buy a bike!")
