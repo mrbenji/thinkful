@@ -23,7 +23,7 @@ def pretty_money(amount):
 
 def pretty_table(data, padding=2):
     """
-    "Pretty print" a table to a multi-line string, with cols as narrow as possible.
+    "Pretty print" a table to a multi-line string, with columns as narrow as possible.
 
     :param data: nested list representing a table (list of rows that are each a list of columns)
     :param padding: minimum space to include between columns

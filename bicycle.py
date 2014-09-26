@@ -53,7 +53,7 @@ for customer in customers:
     bikes_in_budget = customer.affordable_bikes(alpha_bike_shop).keys()
     if len(bikes_in_budget) > 0:
         bikes_in_budget.sort()
-        print ("Customer name (Bikes in Budget): {} ({})".format(customer.name, ", ".join(bikes_in_budget)) + "\n")
+        print ("{} can afford these models: {}".format(customer.name, ", ".join(bikes_in_budget))+"\n")
     else:
         print ("None.\n")
 
