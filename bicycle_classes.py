@@ -13,6 +13,32 @@ def pretty_money(amount):
     return re.sub(r'(\d)+(\d\d\d)(\.\d\d$)', r'\1,\2\3', "${:.2f}".format(amount))
 
 
+def pretty_table(data, padding=2):
+    """
+    "Pretty print" a table to a returned string, with cols as narrow as possible.
+
+    :param data: list of lists (rows that are each a list of columns)
+    :return: a multi-line string containing a formatted table
+    """
+    return_string = ""
+
+    col_widths = [0 for col in range(len(data[0]))]
+    for row in data:
+        col_num = 0
+        for col in row:
+            if len(col) > col_widths[col_num]:
+                col_widths[col_num] = len(col)
+            col_num += 1
+
+    for row in data:
+        col_num = 0
+        for col in row:
+            return_string = return_string + col.ljust(col_widths[col_num]+padding)
+            col_num += 1
+        return_string += "\n"
+    return return_string
+
+
 class Wheel(object):
     def __init__(self, name, weight, cost):
         self.name = name
@@ -88,7 +114,6 @@ class BikeShop(object):
 
     def pretty_inventory(self):
         data = []
-        return_string = ""
 
         data.append(["MFG", "Model", "Frame", "Wheels", "Weight", "Cost", "Price"])
         data.append(["---", "-----", "-----", "------", "------", "----", "-----"])
@@ -104,22 +129,7 @@ class BikeShop(object):
                 pretty_money(self.price_plus_margin(bike.cost))
             ])
 
-        col_widths = [0 for col in range(len(data[0]))]
-        for row in data:
-            col_num = 0
-            for col in row:
-                if len(col) > col_widths[col_num]:
-                    col_widths[col_num] = len(col)
-                col_num += 1
-
-        for row in data:
-            col_num = 0
-            for col in row:
-                return_string = return_string + col.ljust(col_widths[col_num]+2)
-                col_num += 1
-            return_string += "\n"
-        return return_string
-
+        return pretty_table(data)
 
 class Customer(object):
     bicycles_owned = []
