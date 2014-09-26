@@ -38,14 +38,16 @@ weasel_bikes = bicycle_classes.BicycleManufacturer("Weasel Bikes", .12, [
 
 alpha_bike_shop = bicycle_classes.BikeShop("Alpha Bike Shop", weeble_bikes.models_sold + weasel_bikes.models_sold)
 
-customer1 = bicycle_classes.Customer("Ophelia Payne", 300)
-customer2 = bicycle_classes.Customer("Eureka Garlic", 450)
-customer3 = bicycle_classes.Customer("Orson Buggy", 1200)
+customers = [
+    bicycle_classes.Customer("Ophelia Payne", 300),
+    bicycle_classes.Customer("Eureka Garlic", 450),
+    bicycle_classes.Customer("Orson Buggy", 1200)
+]
 
 print ("\n" + ul_string("{} Initial Inventory:".format(alpha_bike_shop.name), "~"))
 print (alpha_bike_shop.pretty_inventory())
 
-for customer in (customer1, customer2, customer3):
+for customer in customers:
     bikes_in_budget = customer.affordable_bikes(alpha_bike_shop).keys()
     if len(bikes_in_budget) > 0:
         bikes_in_budget.sort()
@@ -53,7 +55,7 @@ for customer in (customer1, customer2, customer3):
     else:
         print ("None.\n")
 
-for customer in (customer1, customer2, customer3):
+for customer in customers:
     bikes_in_budget = customer.affordable_bikes(alpha_bike_shop).keys()
     if len(bikes_in_budget) > 0:
         bike_name = random.choice(bikes_in_budget)
