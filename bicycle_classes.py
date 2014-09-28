@@ -18,7 +18,7 @@ def pretty_money(amount):
     return_string = "${:.2f}".format(amount)
 
     # If there are more than 3 digits to the left of the decimal, insert a comma before the last 3.
-    return re.sub(r'(\d)+(\d\d\d)(\.\d\d)$', r'\1,\2\3', return_string)
+    return re.sub(r'(\d+)(\d\d\d)(\.\d\d)$', r'\1,\2\3', return_string)
 
 
 def pretty_table(data, padding=2):
