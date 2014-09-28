@@ -6,19 +6,10 @@ def pretty_money(amount):
     """
     Return integer or float as US-currency-formatted string.
     Ex. 1289 -> "$1,289.00" and 75.98 -> "$75.98"
-
-    Caveats:
-    - Will not work properly if amount > 999,999.99
-    - Requires "re" module (regular expressions)
-
     :param amount: integer or float to format
     :returns: formatted string
     """
-    # Add a $ sign before amount, and require two digits to the right of the decimal.
-    return_string = "${:.2f}".format(amount)
-
-    # If there are more than 3 digits to the left of the decimal, insert a comma before the last 3.
-    return re.sub(r'(\d+)(\d\d\d)(\.\d\d)$', r'\1,\2\3', return_string)
+    return "${:2,.2f}".format(amount)
 
 
 def pretty_table(data, padding=2):
