@@ -65,10 +65,10 @@ for customer in customers:
             bike_name = customer.most_expensive_affordable_bike(alpha_bike_shop)
         else:
             bike_name = random.choice(bikes_in_budget)
-        customer.buy_bicycle(alpha_bike_shop, bike_name)
+        customer.buy_bike(alpha_bike_shop, bike_name)
     else:
         print (customer.name, "doesn't have enough money to buy a bike!")
-        print ("Their bicycle fund still has {} remaining.\n".format(pretty_money(customer.bike_fund)))
+        print ("Their bike fund still has {} remaining.\n".format(pretty_money(customer.bike_fund)))
 
 print ("\n" + ul_string("{} Final Inventory:".format(alpha_bike_shop.name), "~"))
 print (alpha_bike_shop.pretty_inventory())

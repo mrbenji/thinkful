@@ -111,12 +111,12 @@ class BikeShop(object):
                 return next_bike
         return None
 
-    def sell_bicycle(self, customer, model_name):
+    def sell_bike(self, customer, model_name):
         for next_bike in self.inventory:
             if (next_bike.model_name == model_name) and (customer.bike_fund > self.price_plus_margin(next_bike.cost)):
                 self.inventory.remove(next_bike)
                 customer.bike_fund -= self.price_plus_margin(next_bike.cost)
-                customer.bicycles_owned.append(next_bike)
+                customer.bikes_owned.append(next_bike)
                 self.add_profit(next_bike.cost)
                 return True
         return False
@@ -124,7 +124,7 @@ class BikeShop(object):
     def report_profit(self):
         return self.profit_made
 
-    def prices(self):
+    def all_prices(self):
         return_dict = {}
         for next_bike in self.inventory:
             return_dict[next_bike.model_name] = self.price_plus_margin(next_bike.cost)
@@ -149,8 +149,12 @@ class BikeShop(object):
 
         return pretty_table(data)
 
+    def buy_bikes_from_mfg(self, bikes_to_buy):
+        pass
+
+
 class Customer(object):
-    bicycles_owned = []
+    bikes_owned = []
 
     def __init__(self, name, bike_fund):
         self.name = name
@@ -158,7 +162,7 @@ class Customer(object):
 
     def affordable_bikes(self, bike_shop):
         return_dict = {}
-        price_dict = bike_shop.prices()
+        price_dict = bike_shop.all_prices()
         for next_bike_name in price_dict:
             if price_dict[next_bike_name] <= self.bike_fund:
                 return_dict[next_bike_name] = price_dict[next_bike_name]
@@ -175,10 +179,10 @@ class Customer(object):
 
         return return_string
 
-    def buy_bicycle(self, bike_shop, model_name):
-        if bike_shop.sell_bicycle(self, model_name):
+    def buy_bike(self, bike_shop, model_name):
+        if bike_shop.sell_bike(self, model_name):
             print ("{} bought a Model {} bike from {} for".format(self.name, model_name, bike_shop.name), end=" ")
-            # Need to access cost via bicycles_owned, not bike_shop.inventory, because bike object has been moved
-            print ("{},".format(pretty_money(bike_shop.price_plus_margin(self.bicycles_owned[-1].cost))))
+            # Need to access cost via bikes_owned, not bike_shop.inventory, because bike object has been moved
+            print ("{},".format(pretty_money(bike_shop.price_plus_margin(self.bikes_owned[-1].cost))))
             print ("and now has {} remaining in their bike fund.\n".format(pretty_money(self.bike_fund)))
 
