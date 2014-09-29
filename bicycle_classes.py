@@ -9,7 +9,7 @@ def pretty_money(amount):
     :param amount: integer or float to format
     :returns: formatted string
     """
-    return "${:2,.2f}".format(amount)
+    return "${:,.2f}".format(amount)
 
 
 def pretty_table(data, padding=2):
@@ -26,7 +26,7 @@ def pretty_table(data, padding=2):
     return_string = ""
 
     # sanity check... is this a list of lists?
-    if not (type(data) is list and type(data[0]) is list):
+    if not isinstance(data, list) and isinstance(data[0], list):
         return error_string
 
     # make max_col_widths a list of as many 0's as there are columns in the table
@@ -94,8 +94,9 @@ class BikeShop(object):
     margin = 0.2
     profit_made = 0.0
 
-    def __init__(self, name, inventory):
+    def __init__(self, name, initial_budget, inventory):
         self.name = name
+        self.initial_budget = initial_budget
         self.inventory = inventory
 
     def price_plus_margin(self, price):

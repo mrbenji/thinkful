@@ -38,7 +38,8 @@ weasel_bikes = bicycle_classes.BicycleManufacturer("Weasel Bikes", .12, [
     bicycle_classes.Bicycle("A6", highend_wheel, highend_frame, "Weasel Bikes")
 ])
 
-alpha_bike_shop = bicycle_classes.BikeShop("Alpha Bike Shop", weeble_bikes.models_sold + weasel_bikes.models_sold)
+alpha_bike_shop = bicycle_classes.BikeShop("Alpha Bike Shop", 10000,
+    weeble_bikes.models_sold + weasel_bikes.models_sold)
 
 customers = [
     bicycle_classes.Customer("Ophelia Payne", 300),
