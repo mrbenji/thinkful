@@ -45,12 +45,12 @@ alpha_bike_shop = bicycle_classes.BikeShop("Alpha Bike Shop", 10000,
 
 customers = [
     bicycle_classes.Customer("Ophelia Payne", 300),
-    bicycle_classes.Customer("Tristan Schaut", 500),
+    bicycle_classes.Customer("Tristan Schaut", 400),
     bicycle_classes.Customer("Selma Junkoff", 700),
     bicycle_classes.Customer("Nadia Geddit", 1200)
 ]
 
-print ("\n" + ul_string("{} Initial Inventory:".format(alpha_bike_shop.name), "~"))
+print ("\n" + ul_string("Initial Inventory for {}:".format(alpha_bike_shop.name), "~"))
 print (alpha_bike_shop.pretty_inventory())
 
 for customer in customers:
@@ -75,7 +75,7 @@ for customer in customers:
         print (customer.name, "doesn't have enough money to buy a bike!")
         print ("Their bike fund still has {} remaining.\n".format(pretty_money(customer.bike_fund)))
 
-print ("\n" + ul_string("{} Final Inventory:".format(alpha_bike_shop.name), "~"))
+print ("\n" + ul_string("Remaining Inventory for {}:".format(alpha_bike_shop.name), "~"))
 print (alpha_bike_shop.pretty_inventory())
 
 print ("\nProfit made: {}".format(pretty_money(alpha_bike_shop.report_profit())))
