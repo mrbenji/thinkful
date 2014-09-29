@@ -18,7 +18,7 @@ def ul_string(string_to_ul, ul_char="-"):
     :returns: The original string + "\n" + one ul_char
     per char of string_to_ul
     """
-    return str(string_to_ul) + "\n" + (ul_char * len(string_to_ul))
+    return string_to_ul + "\n" + (ul_char * len(string_to_ul))
 
 budget_wheel = bicycle_classes.Wheel("Leadset", 2.29, 54.47)
 midrange_wheel = bicycle_classes.Wheel("IronWorks", 2.16, 149.19)
@@ -45,8 +45,9 @@ alpha_bike_shop = bicycle_classes.BikeShop("Alpha Bike Shop", 10000,
 
 customers = [
     bicycle_classes.Customer("Ophelia Payne", 300),
-    bicycle_classes.Customer("Eureka Garlic", 500),
-    bicycle_classes.Customer("Orson Buggy", 1200)
+    bicycle_classes.Customer("Tristan Schaut", 500),
+    bicycle_classes.Customer("Selma Junkoff", 700),
+    bicycle_classes.Customer("Nadia Geddit", 1200)
 ]
 
 print ("\n" + ul_string("{} Initial Inventory:".format(alpha_bike_shop.name), "~"))

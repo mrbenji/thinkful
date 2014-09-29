@@ -94,9 +94,9 @@ class BikeShop(object):
     margin = 0.2
     profit_made = 0.0
 
-    def __init__(self, name, initial_budget, inventory):
+    def __init__(self, name, budget, inventory):
         self.name = name
-        self.initial_budget = initial_budget
+        self.budget = budget
         self.inventory = inventory
 
     def price_plus_margin(self, price):
