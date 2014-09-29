@@ -5,7 +5,7 @@ import random
 import bicycle_classes
 from bicycle_classes import pretty_money
 
-BUY_BEST_BIKE_POSSIBLE = True
+BUY_BEST_BIKE_POSSIBLE = False
 
 
 def ul_string(string_to_ul, ul_char="-"):
@@ -13,8 +13,10 @@ def ul_string(string_to_ul, ul_char="-"):
     Returns a 1-line string in "underlined" form.
     Does not work properly on strings containing "\n"
     :param string_to_ul: input string
-    :param ul_char: character to use for "underlining," defaults to "-"
-    :returns: The original string + "\n" + len(string_to_ul) of ul_char
+    :param ul_char: character to use for "underlining,"
+    defaults to "-"
+    :returns: The original string + "\n" + one ul_char
+    per char of string_to_ul
     """
     return str(string_to_ul) + "\n" + (ul_char * len(string_to_ul))
 
@@ -58,7 +60,7 @@ for customer in customers:
     else:
         print ("None.")
 
-print() # need a blank line for formatting
+print()  # needed a blank line for formatting
 
 for customer in customers:
     bikes_in_budget = customer.affordable_bikes(alpha_bike_shop).keys()
