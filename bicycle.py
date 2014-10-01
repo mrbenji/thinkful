@@ -1,53 +1,42 @@
 from __future__ import (absolute_import, print_function, unicode_literals, division)
 
 import random
+import itertools
 
-import bicycle_classes
-from bicycle_classes import pretty_money
+from bdt_utils import ul_string
+from bicycle_classes import Wheel, Frame, Bicycle, Customer, BikeShop, BikeManufacturer, pretty_money
 
 BUY_BEST_BIKE_POSSIBLE = False
 
+budget_wheel = Wheel("Leadset", 2.29, 54.47)
+midrange_wheel = Wheel("IronWorks", 2.16, 149.19)
+highend_wheel = Wheel("NanoTube", 1.58, 449.29)
 
-def ul_string(string_to_ul, ul_char="-"):
-    """
-    Returns a 1-line string in "underlined" form.
-    Does not work properly on strings containing "\n"
-    :param string_to_ul: input string
-    :param ul_char: character to use for "underlining,"
-    defaults to "-"
-    :returns: The original string + "\n" + one ul_char
-    per char of string_to_ul
-    """
-    return string_to_ul + "\n" + (ul_char * len(string_to_ul))
+budget_frame = Frame("Tank", "steel", 28.5, 49.34)
+midrange_frame = Frame("Sedan", "aluminum", 24.5, 99.72)
+highend_frame = Frame("Butterfly", "carbon", 20.5, 699.09)
 
-budget_wheel = bicycle_classes.Wheel("Leadset", 2.29, 54.47)
-midrange_wheel = bicycle_classes.Wheel("IronWorks", 2.16, 149.19)
-highend_wheel = bicycle_classes.Wheel("NanoTube", 1.58, 449.29)
+manufacturers = [
+    BikeManufacturer("Weeble Bikes", .10, [
+        Bicycle("E1", budget_wheel, budget_frame, "Weeble Bikes"),
+        Bicycle("E2", budget_wheel, midrange_frame, "Weeble Bikes"),
+        Bicycle("E3", midrange_wheel, budget_frame, "Weeble Bikes")
+    ]),
+    BikeManufacturer("Weasel Bikes", .12, [
+        Bicycle("A4", midrange_wheel, midrange_frame, "Weasel Bikes"),
+        Bicycle("A5", midrange_wheel, highend_frame, "Weasel Bikes"),
+        Bicycle("A6", highend_wheel, highend_frame, "Weasel Bikes")
+    ])
+]
 
-budget_frame = bicycle_classes.Frame("Tank", "steel", 28.5, 49.34)
-midrange_frame = bicycle_classes.Frame("Sedan", "aluminum", 24.5, 99.72)
-highend_frame = bicycle_classes.Frame("Butterfly", "carbon", 20.5, 699.09)
-
-weeble_bikes = bicycle_classes.BicycleManufacturer("Weeble Bikes", .10, [
-    bicycle_classes.Bicycle("E1", budget_wheel, budget_frame, "Weeble Bikes"),
-    bicycle_classes.Bicycle("E2", budget_wheel, midrange_frame, "Weeble Bikes"),
-    bicycle_classes.Bicycle("E3", midrange_wheel, budget_frame, "Weeble Bikes")
-])
-
-weasel_bikes = bicycle_classes.BicycleManufacturer("Weasel Bikes", .12, [
-    bicycle_classes.Bicycle("A4", midrange_wheel, midrange_frame, "Weasel Bikes"),
-    bicycle_classes.Bicycle("A5", midrange_wheel, highend_frame, "Weasel Bikes"),
-    bicycle_classes.Bicycle("A6", highend_wheel, highend_frame, "Weasel Bikes")
-])
-
-alpha_bike_shop = bicycle_classes.BikeShop("Alpha Bike Shop", 10000,
-    weeble_bikes.models_sold + weasel_bikes.models_sold)
+alpha_bike_shop = BikeShop("Alpha Bike Shop", 10000,
+    list(itertools.chain.from_iterable([manufacturer.models_sold for manufacturer in manufacturers])))
 
 customers = [
-    bicycle_classes.Customer("Ophelia Payne", 300),
-    bicycle_classes.Customer("Tristan Schaut", 400),
-    bicycle_classes.Customer("Selma Junkoff", 700),
-    bicycle_classes.Customer("Nadia Geddit", 1200)
+    Customer("Ophelia Payne", 300),
+    Customer("Tristan Schaut", 400),
+    Customer("Selma Junkoff", 700),
+    Customer("Nadia Geddit", 1200)
 ]
 
 print ("\n" + ul_string("Initial Inventory for {}:".format(alpha_bike_shop.name), "~"))
@@ -78,4 +67,4 @@ for customer in customers:
 print ("\n" + ul_string("Remaining Inventory for {}:".format(alpha_bike_shop.name), "~"))
 print (alpha_bike_shop.pretty_inventory())
 
-print ("\nProfit made: {}".format(pretty_money(alpha_bike_shop.report_profit())))
+print ("Profit made: {}".format(pretty_money(alpha_bike_shop.report_profit()))+"\n")

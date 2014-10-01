@@ -1,59 +1,7 @@
 from __future__ import (absolute_import, print_function, unicode_literals, division)
-import re
 
 
-def pretty_money(amount):
-    """
-    Return integer or float as US-currency-formatted string.
-    Ex. 1289 -> "$1,289.00" and 75.98 -> "$75.98"
-    :param amount: integer or float to format
-    :returns: formatted string
-    """
-    return "${:,.2f}".format(amount)
-
-
-def pretty_table(data, padding=2):
-    """
-    "Pretty print" a table to a multi-line string, with columns as narrow as possible.
-
-    :param data: nested list representing a table (list of rows that are each a list of columns)
-    :param padding: minimum space to include between columns
-    :returns: a multi-line string containing a formatted table
-    """
-    error_string = "pretty_table() encountered an improperly-formatted table.\n"
-    error_string += "Expected a list of rows, with every row a list of the same number of columns.\n"
-
-    return_string = ""
-
-    # sanity check... is this a list of lists?
-    if not isinstance(data, list) and isinstance(data[0], list):
-        return error_string
-
-    # make max_col_widths a list of as many 0's as there are columns in the table
-    max_col_widths = [0] * len(data[0])
-
-    for row in data:
-
-        # every row should have the same number of columns
-        if len(row) != len(data[0]):
-            return error_string
-
-        col_num = 0
-
-        # if a column is wider in this row than in previous rows, reset this column's max width
-        for col in row:
-            if len(col) > max_col_widths[col_num]:
-                max_col_widths[col_num] = len(col)
-            col_num += 1
-
-    for row in data:
-        col_num = 0
-        for col in row:
-            return_string += col.ljust(max_col_widths[col_num]+padding)
-            col_num += 1
-        return_string += "\n"
-
-    return return_string
+from bdt_utils import pretty_money, pretty_table
 
 
 class Wheel(object):
@@ -82,17 +30,21 @@ class Bicycle(object):
         self.weight = frame.weight + wheel_type.weight*2
 
 
-class BicycleManufacturer(object):
+class BikeManufacturer(object):
     def __init__(self, name, margin, models_sold):
         self.name = name
         self.margin = margin
         self.models_sold = models_sold
+
+    def sell_bike(self, buy_list, bike_shop):
+        pass
 
 
 class BikeShop(object):
 
     margin = 0.2
     profit_made = 0.0
+    restock_list = []
 
     def __init__(self, name, budget, inventory):
         self.name = name
@@ -104,6 +56,7 @@ class BikeShop(object):
 
     def add_profit(self, cost):
         self.profit_made += cost * self.margin
+        self.budget += cost * self.margin
 
     def check_inventory(self, model_name):
         for next_bike in self.inventory:
@@ -149,7 +102,7 @@ class BikeShop(object):
 
         return pretty_table(data)
 
-    def buy_bikes_from_mfg(self, bikes_to_buy):
+    def buy_bikes_from_mfg(self, manufacturer, bikes_to_buy):
         pass
 
 
