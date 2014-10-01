@@ -30,7 +30,12 @@ manufacturers = [
 ]
 
 alpha_bike_shop = BikeShop("Alpha Bike Shop", 10000,
-    list(itertools.chain.from_iterable([manufacturer.models_sold for manufacturer in manufacturers])))
+    list(
+        itertools.chain.from_iterable(
+            [manufacturer.models_sold for manufacturer in manufacturers]
+        )
+    )
+)
 
 customers = [
     Customer("Ophelia Payne", 300),
