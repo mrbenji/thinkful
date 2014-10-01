@@ -12,13 +12,14 @@ def get(name, filename):
     logging.info("Reading {} from {}".format(name, filename))
     logging.debug("Opening a file")
     with open(filename, "r") as f:
-        reader = csv.DictReader(f)
+        reader = csv.reader(f)
         logging.debug("Reading snippet from file")
         for line in reader:
+            logging.debug("line (list) = {}".format(line))
             for key in line:
                 if key == name:
                     logging.debug("Read successful")
-                    return name, line[key]
+                    return name, line[1]
     return None, None
 
 def put(name, snippet, filename):

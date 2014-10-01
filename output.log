@@ -1,1062 +1,65 @@
-INFO:root:Writing 'spam':'eggs' to 'snippets.csv'
+INFO:root:Starting snippets
+INFO:root:Constructing parser
+DEBUG:root:Constructing get subparser
+DEBUG:root:Constructing put subparser
+INFO:root:Reading list comprehension from python-notes.csv
+DEBUG:root:Opening a file
+DEBUG:root:Reading snippet from file
+INFO:root:Starting snippets
+INFO:root:Constructing parser
+DEBUG:root:Constructing get subparser
+DEBUG:root:Constructing put subparser
+INFO:root:Reading spam from snippets.csv
+DEBUG:root:Opening a file
+DEBUG:root:Reading snippet from file
+DEBUG:root:Read successful
+INFO:root:Starting snippets
+INFO:root:Constructing parser
+DEBUG:root:Constructing get subparser
+DEBUG:root:Constructing put subparser
+INFO:root:Writing spam:eggs to python-notes.csv
 DEBUG:root:Opening file
 DEBUG:root:Writing snippet to file
 DEBUG:root:Write successful
-INFO:root:Writing 'green eggs':'ham' to 'snippets.csv'
+INFO:root:Starting snippets
+INFO:root:Constructing parser
+DEBUG:root:Constructing get subparser
+DEBUG:root:Constructing put subparser
+INFO:root:Reading list comprehension from python-notes.csv
+DEBUG:root:Opening a file
+DEBUG:root:Reading snippet from file
+DEBUG:root:Read successful
+INFO:root:Starting snippets
+INFO:root:Constructing parser
+DEBUG:root:Constructing get subparser
+DEBUG:root:Constructing put subparser
+INFO:root:Writing key:val to python-notes.csv
 DEBUG:root:Opening file
 DEBUG:root:Writing snippet to file
 DEBUG:root:Write successful
 INFO:root:Starting snippets
 INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Constructing parser
-INFO:root:Starting snippets
-INFO:root:Constructing parser
-INFO:root:Starting snippets
-INFO:root:Constructing parser
-DEBUG:root:Constructing put subparser
-INFO:root:Starting snippets
-INFO:root:Constructing parser
-DEBUG:root:Constructing put subparser
-INFO:root:Starting snippets
-INFO:root:Constructing parser
-DEBUG:root:Constructing put subparser
-INFO:root:Starting snippets
-INFO:root:Constructing parser
-DEBUG:root:Constructing put subparser
-INFO:root:Starting snippets
-INFO:root:Constructing parser
-DEBUG:root:Constructing put subparser
-INFO:root:Starting snippets
-INFO:root:Constructing parser
-DEBUG:root:Constructing get subparser
-DEBUG:root:Constructing put subparser
-INFO:root:Starting snippets
-INFO:root:Constructing parser
-DEBUG:root:Constructing get subparser
-DEBUG:root:Constructing put subparser
-INFO:root:Starting snippets
-INFO:root:Constructing parser
-DEBUG:root:Constructing get subparser
-DEBUG:root:Constructing put subparser
-INFO:root:Starting snippets
-INFO:root:Constructing parser
-DEBUG:root:Constructing get subparser
-DEBUG:root:Constructing put subparser
-INFO:root:Reading {} from {}
-INFO:root:Starting snippets
-INFO:root:Constructing parser
 DEBUG:root:Constructing get subparser
 DEBUG:root:Constructing put subparser
 INFO:root:Reading spam from snippets.csv
+DEBUG:root:Opening a file
+DEBUG:root:Reading snippet from file
+DEBUG:root:Read successful
+INFO:root:Starting snippets
+INFO:root:Constructing parser
+DEBUG:root:Constructing get subparser
+DEBUG:root:Constructing put subparser
+INFO:root:Reading spam from python-notes.csv
 DEBUG:root:Opening a file
 DEBUG:root:Reading snippet from file
 INFO:root:Starting snippets
 INFO:root:Constructing parser
 DEBUG:root:Constructing get subparser
 DEBUG:root:Constructing put subparser
-INFO:root:Reading spam from snippets.csv
-DEBUG:root:Opening a file
-DEBUG:root:Reading snippet from file
-INFO:root:Starting snippets
-INFO:root:Constructing parser
-DEBUG:root:Constructing get subparser
-DEBUG:root:Constructing put subparser
-INFO:root:Reading spam from snippets.csv
-DEBUG:root:Opening a file
-DEBUG:root:Reading snippet from file
-INFO:root:Starting snippets
-INFO:root:Constructing parser
-DEBUG:root:Constructing get subparser
-DEBUG:root:Constructing put subparser
-INFO:root:Reading spam from snippets.csv
-DEBUG:root:Opening a file
-DEBUG:root:Reading snippet from file
-INFO:root:Starting snippets
-INFO:root:Constructing parser
-DEBUG:root:Constructing get subparser
-DEBUG:root:Constructing put subparser
-INFO:root:Reading spam from snippets.csv
-DEBUG:root:Opening a file
-DEBUG:root:Reading snippet from file
+INFO:root:Writing key:val to python-notes.csv
+DEBUG:root:Opening file
+DEBUG:root:Writing snippet to file
+DEBUG:root:Write successful
 INFO:root:Starting snippets
 INFO:root:Constructing parser
 DEBUG:root:Constructing get subparser
@@ -1069,7 +72,14 @@ INFO:root:Starting snippets
 INFO:root:Constructing parser
 DEBUG:root:Constructing get subparser
 DEBUG:root:Constructing put subparser
-INFO:root:Reading spam from snippets.csv
+INFO:root:Reading spam from python-notes.csv
+DEBUG:root:Opening a file
+DEBUG:root:Reading snippet from file
+INFO:root:Starting snippets
+INFO:root:Constructing parser
+DEBUG:root:Constructing get subparser
+DEBUG:root:Constructing put subparser
+INFO:root:Reading spam from python-notes.csv
 DEBUG:root:Opening a file
 DEBUG:root:Reading snippet from file
 DEBUG:root:Read successful
@@ -1077,7 +87,22 @@ INFO:root:Starting snippets
 INFO:root:Constructing parser
 DEBUG:root:Constructing get subparser
 DEBUG:root:Constructing put subparser
-INFO:root:Reading spam from snippets.csv
+INFO:root:Reading ham from python-notes.csv
+DEBUG:root:Opening a file
+DEBUG:root:Reading snippet from file
+INFO:root:Starting snippets
+INFO:root:Constructing parser
+DEBUG:root:Constructing get subparser
+DEBUG:root:Constructing put subparser
+INFO:root:Starting snippets
+INFO:root:Constructing parser
+DEBUG:root:Constructing get subparser
+DEBUG:root:Constructing put subparser
+INFO:root:Starting snippets
+INFO:root:Constructing parser
+DEBUG:root:Constructing get subparser
+DEBUG:root:Constructing put subparser
+INFO:root:Reading list comprehension from python-notes.csv
 DEBUG:root:Opening a file
 DEBUG:root:Reading snippet from file
 DEBUG:root:Read successful
@@ -1085,13 +110,25 @@ INFO:root:Starting snippets
 INFO:root:Constructing parser
 DEBUG:root:Constructing get subparser
 DEBUG:root:Constructing put subparser
-INFO:root:Reading foo from snippets.csv
+INFO:root:Reading green eggs from python-notes.csv
 DEBUG:root:Opening a file
 DEBUG:root:Reading snippet from file
 INFO:root:Starting snippets
 INFO:root:Constructing parser
 DEBUG:root:Constructing get subparser
 DEBUG:root:Constructing put subparser
-INFO:root:Reading foo from snippets.csv
+INFO:root:Reading key from python-notes.csv
 DEBUG:root:Opening a file
 DEBUG:root:Reading snippet from file
+DEBUG:root:Read successful
+INFO:root:Starting snippets
+INFO:root:Constructing parser
+DEBUG:root:Constructing get subparser
+DEBUG:root:Constructing put subparser
+INFO:root:Reading key from python-notes.csv
+DEBUG:root:Opening a file
+DEBUG:root:Reading snippet from file
+DEBUG:root:line (list) = ['list comprehension', '[item for item in items]']
+DEBUG:root:line (list) = ['spam', 'eggs']
+DEBUG:root:line (list) = ['key', 'val']
+DEBUG:root:Read successful
