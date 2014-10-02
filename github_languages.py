@@ -1,13 +1,14 @@
 import sys
 import operator
 from collections import defaultdict
+from secret import USERNAME, PASSWORD
 
 import requests
 
 def get_repositories(user):
     """ Retreive a list of a user's repositories """
     url = "https://api.github.com/users/{user}/repos".format(user=user)
-    response = requests.get(url)
+    response = requests.get(url, auth=(USERNAME, PASSWORD))
     return response.json()
 
 def main():
