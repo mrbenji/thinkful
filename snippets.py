@@ -20,7 +20,8 @@ def get(name, filename):
                 if key == name:
                     logging.debug("Read successful")
                     return name, line[1]
-    return None, None
+    return name, None
+
 
 def put(name, snippet, filename):
     """ Store a snippet with an associated name in the CSV file """
@@ -32,6 +33,7 @@ def put(name, snippet, filename):
         writer.writerow([name, snippet])
     logging.debug("Write successful")
     return name, snippet
+
 
 def make_parser():
     """ Construct the command line parser """
@@ -46,7 +48,7 @@ def make_parser():
     get_parser = subparsers.add_parser("get", help="Print a snippet")
     get_parser.add_argument("name", help="The name of the snippet")
     get_parser.add_argument("filename", default="snippets.csv", nargs="?",
-        help="The snippet filename")
+                            help="The snippet filename")
 
     # Subparser for the put command
     logging.debug("Constructing put subparser")
@@ -54,9 +56,10 @@ def make_parser():
     put_parser.add_argument("name", help="The name of the snippet")
     put_parser.add_argument("snippet", help="The snippet text")
     put_parser.add_argument("filename", default="snippets.csv", nargs="?",
-        help="The snippet filename")
+                            help="The snippet filename")
 
     return parser
+
 
 def main():
     """ Main function """
@@ -69,7 +72,11 @@ def main():
 
     if command == "get":
         name, snippet = get(**arguments)
-        print "Retrieved '{}', keyed to '{}'".format(snippet, name)
+        if snippet:
+            print "Retrieved '{}', keyed to '{}'".format(snippet, name)
+
+        else:
+            print "ERROR: Unable to find any snippets keyed to '{}'.".format(name)
 
     if command == "put":
         name, snippet = put(**arguments)
