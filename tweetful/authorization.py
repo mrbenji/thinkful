@@ -1,11 +1,10 @@
-import urlparse
+mport urlparse
 
 import requests
 from requests_oauthlib import OAuth1
 
 from secret import CLIENT_KEY, CLIENT_SECRET
 from urls import *
-
 
 def get_request_token():
     """ Get a token allowing us to request user authorization """
@@ -17,7 +16,6 @@ def get_request_token():
     request_token = credentials.get("oauth_token")[0]
     request_secret = credentials.get("oauth_token_secret")[0]
     return request_token, request_secret
-
 
 def authorize():
     """ A complete OAuth authentication flow """
