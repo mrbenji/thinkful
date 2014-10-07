@@ -21,6 +21,15 @@ def authorize():
     """ A complete OAuth authentication flow """
     request_token, request_secret = get_request_token()
     verifier = get_user_authorization(request_token)
+    access_token, access_secret = get_access_token(request_token,
+                                                   request_secret,
+                                                   verifier)
+
+    oauth = OAuth1(CLIENT_KEY,
+                   client_secret=CLIENT_SECRET,
+                   resource_owner_key=access_token,
+                   resource_owner_secret=access_secret)
+    return oauth
 
 
 def get_user_authorization(request_token):
