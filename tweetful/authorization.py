@@ -1,4 +1,4 @@
-mport urlparse
+import urlparse
 
 import requests
 from requests_oauthlib import OAuth1
