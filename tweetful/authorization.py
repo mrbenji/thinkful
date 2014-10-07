@@ -20,7 +20,7 @@ def get_request_token():
 def authorize():
     """ A complete OAuth authentication flow """
     request_token, request_secret = get_request_token()
-    print request_token, request_secret
+    verifier = get_user_authorization(request_token)
 
 
 def get_user_authorization(request_token):
