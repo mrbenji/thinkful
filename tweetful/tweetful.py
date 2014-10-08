@@ -35,22 +35,9 @@ def make_parser():
     parser = argparse.ArgumentParser(description=description)
 
     group = parser.add_mutually_exclusive_group(required=True)
-    group.add_argument('-i', type=str, choices=["followers", "following"],
+    group.add_argument('-i', '--info', type=str, choices=["followers", "following"],
                        help="Display user information")
-    group.add_argument('-t', '--text', type=str, help="Text to tweet")
-
-#    subparsers = group.add_subparsers(dest="command", help="Available commands")
-#
-#    # Subparser for the tweet command
-#    logging.debug("Constructing tweet subparser")
-#    tweet_parser = subparsers.add_parser("tweet", help="Post a tweet")
-#    tweet_parser.add_argument("text", help="Text to tweet")
-#
-#    # Subparser for the info command
-#    logging.debug("Constructing info subparser")
-#    info_parser = subparsers.add_parser("-i","--info", type=string, help="Display user info")
-#    info_parser.add_argument("display_info", help="info to display")
-#    info_parser.add_argument("following", help="List Twitter users followed")
+    group.add_argument('-t', '--tweet', type=str, help="Text to tweet")
 
     return parser
 
@@ -63,11 +50,11 @@ def main():
     # Convert parsed arguments from Namespace to dictionary
     arguments = vars(arguments)
 
-    if arguments['t']:
-        print 'Tweeting "{}"'.format(arguments['t'])
+    if arguments['tweet']:
+        print 'Tweeting "{}"'.format(arguments['tweet'])
 
-    if arguments['i']:
-        print 'Info routine called with "{}"'.format(arguments['i'])
+    if arguments['info']:
+        print 'Info routine called with "{}"'.format(arguments['info'])
 
 #    auth = authorization.authorize()
 
