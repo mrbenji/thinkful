@@ -27,6 +27,24 @@ logging.basicConfig(filename="output.log", level=logging.DEBUG)
 #                    return name, line[1]
 #    return name, None
 
+def get_friends(auth):
+    response = requests.get(GET_FRIENDS_URL, auth=auth)
+    for user in response.json()["users"]:
+        print user["screen_name"]
+    #x = response.json()
+    #print x["users"][0]
+    #print json.dumps(response.json(), indent=4)
+
+
+def get_followers(auth):
+    response = requests.get(GET_FOLLOWERS_URL, auth=auth)
+    print json.dumps(response.json(), indent=4)
+
+
+def get_timeline(auth):
+    response = requests.get(TIMELINE_URL, auth=auth)
+    print json.dumps(response.json(), indent=4)
+
 
 def make_parser():
     """ Construct the command line parser """
@@ -35,7 +53,7 @@ def make_parser():
     parser = argparse.ArgumentParser(description=description)
 
     group = parser.add_mutually_exclusive_group(required=True)
-    group.add_argument('-i', '--info', type=str, choices=["followers", "following"],
+    group.add_argument('-i', '--info', type=str, choices=["followers", "friends", "timeline"],
                        help="Display user information")
     group.add_argument('-t', '--tweet', type=str, help="Text to tweet")
 
@@ -50,15 +68,20 @@ def main():
     # Convert parsed arguments from Namespace to dictionary
     arguments = vars(arguments)
 
+    auth = authorization.authorize()
+
     if arguments['tweet']:
         print 'Tweeting "{}"'.format(arguments['tweet'])
 
     if arguments['info']:
-        print 'Info routine called with "{}"'.format(arguments['info'])
+        if arguments['info'] == "friends":
+            get_friends(auth)
 
-#    auth = authorization.authorize()
+        if arguments['info'] == "timeline":
+            get_timeline(auth)
 
 #    response = requests.get(TIMELINE_URL, auth=auth)
+#    response = requests.get(GET_FRIENDS_URL, auth=auth)
 #    print json.dumps(response.json(), indent=4)
 
 
