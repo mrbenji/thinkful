@@ -33,6 +33,10 @@ def get_timeline(auth):
 
     #print json.dumps(response.json(), indent=4)
 
+def post_status(status, auth):
+    requests.post(POST_STATUS_URL, auth=auth, status=status)
+
+
 def make_parser():
     """ Construct the command line parser """
     logging.info("Constructing parser")
@@ -59,6 +63,7 @@ def main():
 
     if arguments['tweet']:
         print 'Tweeting "{}"'.format(arguments['tweet'])
+        post_status(format(arguments['tweet']), auth)
 
     if arguments['info']:
         if arguments['info'] == "friends":
