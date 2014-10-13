@@ -99,4 +99,5 @@ $RECYCLE.BIN/
 *.msp
 env
 secret.py
+access.json
 output.log
