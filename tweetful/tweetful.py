@@ -82,3 +82,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+#    print json.dumps(response.json(), indent=4)
+
+
+if __name__ == "__main__":
+    main()
