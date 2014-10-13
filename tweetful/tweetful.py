@@ -29,10 +29,9 @@ def get_timeline(auth):
     response = requests.get(TIMELINE_URL, auth=auth)
     for post in response.json():
         print post["user"]["screen_name"]
-        print post["text"]
+        print post["text"].encode('ascii', 'ignore')
 
     #print json.dumps(response.json(), indent=4)
-
 
 def make_parser():
     """ Construct the command line parser """
