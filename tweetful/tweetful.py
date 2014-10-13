@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+from __future__ import unicode_literals
 import authorization
 import json
 import requests
@@ -12,38 +13,25 @@ from urls import *
 logging.basicConfig(filename="output.log", level=logging.DEBUG)
 
 
-#def get(name, filename):
-#    """ Print a snippet from a CSV file, based on an associated name. """
-#    logging.info("Reading {} from {}".format(name, filename))
-#    logging.debug("Opening a file")
-#    with open(filename, "r") as f:
-#        reader = csv.reader(f)
-#        logging.debug("Reading snippet from file")
-#        for line in reader:
-#            logging.debug("line (list) = {}".format(line))
-#            for key in line:
-#                if key == name:
-#                    logging.debug("Read successful")
-#                    return name, line[1]
-#    return name, None
-
 def get_friends(auth):
     response = requests.get(GET_FRIENDS_URL, auth=auth)
     for user in response.json()["users"]:
         print user["screen_name"]
-    #x = response.json()
-    #print x["users"][0]
-    #print json.dumps(response.json(), indent=4)
 
 
 def get_followers(auth):
     response = requests.get(GET_FOLLOWERS_URL, auth=auth)
-    print json.dumps(response.json(), indent=4)
+    for user in response.json()["users"]:
+        print user["screen_name"]
 
 
 def get_timeline(auth):
     response = requests.get(TIMELINE_URL, auth=auth)
-    print json.dumps(response.json(), indent=4)
+    for post in response.json():
+        print post["user"]["screen_name"]
+        print post["text"]
+
+    #print json.dumps(response.json(), indent=4)
 
 
 def make_parser():
@@ -76,6 +64,9 @@ def main():
     if arguments['info']:
         if arguments['info'] == "friends":
             get_friends(auth)
+
+        if arguments['info'] == "followers":
+            get_followers(auth)
 
         if arguments['info'] == "timeline":
             get_timeline(auth)
