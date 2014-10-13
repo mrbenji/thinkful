@@ -28,7 +28,7 @@ def get_followers(auth):
 def get_timeline(auth):
     response = requests.get(TIMELINE_URL, auth=auth)
     for post in response.json():
-        print "\n" + post["user"]["screen_name"]
+        print "\n" + post["user"]["screen_name"] + ": ",
         print post["text"].encode('ascii', 'ignore')
 
     #print json.dumps(response.json(), indent=4)
