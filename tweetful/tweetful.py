@@ -9,7 +9,7 @@ import logging
 
 from urls import *
 
-# Set the log output file, and the log level
+# Set the log output file and log level
 logging.basicConfig(filename="output.log", level=logging.DEBUG)
 
 
@@ -77,3 +77,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+ main()
