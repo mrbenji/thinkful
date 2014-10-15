@@ -36,8 +36,11 @@ def get_timeline(auth):
     #print json.dumps(response.json(), indent=4)
 
 def post_status(status, auth):
-    payload = {'status':status}
-    requests.post(POST_STATUS_URL, auth=auth, params=payload)
+    if len(status) < 141:
+        payload = {'status':status}
+        requests.post(POST_STATUS_URL, auth=auth, params=payload)
+    else:
+        print "ERROR: Tweets may not be longer than 140 characters!"
 
 
 def make_parser():
