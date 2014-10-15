@@ -60,7 +60,7 @@ def get_user_authorization(request_token):
     """
     authorize_url = AUTHORIZE_URL
     authorize_url = authorize_url.format(request_token=request_token)
-    print 'Authorize app by opening this URL in your web browser:\n' + authorize_url
+    print 'Please open this URL in a web browser, then click "Authorize App":\n' + authorize_url
     return raw_input('Input the verifier code displayed: ')
 
 
