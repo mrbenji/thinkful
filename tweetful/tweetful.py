@@ -14,18 +14,21 @@ logging.basicConfig(filename="output.log", level=logging.DEBUG)
 
 
 def get_friends(auth):
+    """ Print Twitter users I follow """
     response = requests.get(GET_FRIENDS_URL, auth=auth)
     for user in response.json()["users"]:
         print user["screen_name"]
 
 
 def get_followers(auth):
+    """ Print Twitter users following me """
     response = requests.get(GET_FOLLOWERS_URL, auth=auth)
     for user in response.json()["users"]:
         print user["screen_name"]
 
 
 def get_timeline(auth):
+    """ Print a summary of tweets on my timeline """
     response = requests.get(TIMELINE_URL, auth=auth)
     for post in response.json():
         post_string =  "\n" + post["user"]["screen_name"] + ": "
@@ -36,11 +39,12 @@ def get_timeline(auth):
     #print json.dumps(response.json(), indent=4)
 
 def post_status(status, auth):
+    """ Post text as a tweet """
     if len(status) < 141:
         payload = {'status':status}
         requests.post(POST_STATUS_URL, auth=auth, params=payload)
     else:
-        print "ERROR: Tweets may not be longer than 140 characters!"
+        print "ERROR: Tweets can't be longer than 140 characters! No tweet posted."
 
 
 def make_parser():
@@ -80,10 +84,6 @@ def main():
 
         if arguments['info'] == "timeline":
             get_timeline(auth)
-
-#    response = requests.get(TIMELINE_URL, auth=auth)
-#    response = requests.get(GET_FRIENDS_URL, auth=auth)
-#    print json.dumps(response.json(), indent=4)
 
 
 if __name__ == "__main__":
