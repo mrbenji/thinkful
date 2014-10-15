@@ -36,7 +36,8 @@ def get_timeline(auth):
     #print json.dumps(response.json(), indent=4)
 
 def post_status(status, auth):
-    requests.post(POST_STATUS_URL, auth=auth, params={'status':status})
+    payload = {'status':status}
+    requests.post(POST_STATUS_URL, auth=auth, params=payload)
 
 
 def make_parser():
