@@ -60,8 +60,8 @@ def get_user_authorization(request_token):
     """
     authorize_url = AUTHORIZE_URL
     authorize_url = authorize_url.format(request_token=request_token)
-    print 'Please go here and authorize:\n' + authorize_url
-    return raw_input('Please input the verifier: ')
+    print 'Authorize app by opening this URL in your web browser:\n' + authorize_url
+    return raw_input('Input the verifier code displayed: ')
 
 
 def get_access_token(request_token, request_secret, verifier):
@@ -79,3 +79,4 @@ def get_access_token(request_token, request_secret, verifier):
     access_token = credentials.get('oauth_token')[0]
     access_secret = credentials.get('oauth_token_secret')[0]
     return access_token, access_secret
+
