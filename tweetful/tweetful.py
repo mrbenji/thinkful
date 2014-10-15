@@ -36,7 +36,7 @@ def get_timeline(auth):
     #print json.dumps(response.json(), indent=4)
 
 def post_status(status, auth):
-    requests.post(POST_STATUS_URL, auth=auth, args={'status':status})
+    requests.post(POST_STATUS_URL, auth=auth, params={'status':status})
 
 
 def make_parser():
@@ -79,11 +79,6 @@ def main():
 
 #    response = requests.get(TIMELINE_URL, auth=auth)
 #    response = requests.get(GET_FRIENDS_URL, auth=auth)
-#    print json.dumps(response.json(), indent=4)
-
-
-if __name__ == "__main__":
-    main()
 #    print json.dumps(response.json(), indent=4)
 
 
