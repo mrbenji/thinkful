@@ -28,13 +28,15 @@ def get_followers(auth):
 def get_timeline(auth):
     response = requests.get(TIMELINE_URL, auth=auth)
     for post in response.json():
-        print "\n" + post["user"]["screen_name"] + ": ",
-        print post["text"].encode('ascii', 'ignore')
+        post_string =  "\n" + post["user"]["screen_name"] + ": "
+        post_string = post_string + post["text"].encode('ascii', 'ignore')
+        post_string = post_string.replace("&amp;","&")
+        print post_string
 
     #print json.dumps(response.json(), indent=4)
 
 def post_status(status, auth):
-    requests.post(POST_STATUS_URL, auth=auth, status=status)
+    requests.post(POST_STATUS_URL, auth=auth, args={'status':status})
 
 
 def make_parser():
