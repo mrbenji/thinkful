@@ -3,7 +3,10 @@
 import argparse, sys
 
 def calculate_discount(item_cost, relative_discount, absolute_discount):
-    total_discount = float(item_cost) * (1/float(relative_discount))
+    if relative_discount > 0.00:
+        total_discount = float(item_cost) * (1/float(relative_discount))
+    else:
+        total_discount = 0.00
     total_discount -= float(absolute_discount)
     return float(item_cost) - total_discount
 
@@ -21,15 +24,15 @@ def make_parser():
 
 
 def main():
-    parser = make_parser
+    parser = make_parser()
     arguments = parser.parse_args(sys.argv[1:])
     # Convert parsed arguments from Namespace to dictionary
     arguments = vars(arguments)
-    print "arguments: {}".format(arguments)
+
     relative_discount_in = 0.0
     absolute_discount_in = 0.0
 
-    item_cost_in = ["cost"]
+    item_cost_in = arguments["cost"]
 
     if arguments["relative_discount"]:
         relative_discount_in = arguments["relative_discount"]
