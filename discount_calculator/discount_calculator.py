@@ -12,9 +12,9 @@ def calculate_discount(item_cost, relative_discount, absolute_discount):
     discounted_price = float(item_cost) - total_discount
 
     if discounted_price < 0.00:
-        return 0.00
+        return "0.00"
     else:
-        return float(discounted_price)
+        return "{:.2f}".format(float(discounted_price))
 
 
 def make_parser():
