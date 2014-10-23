@@ -1,15 +1,17 @@
 #!/bin/env python
 
+from __future__ import division
 import argparse, sys
+
 
 def calculate_discount(item_cost, relative_discount, absolute_discount):
     if relative_discount > 0.00:
-        total_discount = float(item_cost) * float(relative_discount/100)
+        discount = item_cost * float(relative_discount/100)
     else:
-        total_discount = 0.00
+        discount = 0.00
 
-    total_discount += float(absolute_discount)
-    discounted_price = float(item_cost) - total_discount
+    discount += absolute_discount
+    discounted_price = item_cost - discount
 
     if discounted_price < 0.00:
         return 0.0
