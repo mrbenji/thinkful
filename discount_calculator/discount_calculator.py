@@ -7,8 +7,14 @@ def calculate_discount(item_cost, relative_discount, absolute_discount):
         total_discount = float(item_cost) * float(relative_discount/100)
     else:
         total_discount = 0.00
+
     total_discount += float(absolute_discount)
-    return float(item_cost) - total_discount
+    discounted_price = float(item_cost) - total_discount
+
+    if discounted_price < 0.00:
+        return 0.00
+    else:
+        return float(discounted_price)
 
 
 def make_parser():

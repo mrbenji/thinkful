@@ -16,5 +16,10 @@ class DiscountCalculatorTests(unittest.TestCase):
         self.assertTrue(140, calculate_discount(200, 25, 10))
         self.assertTrue(119.75, calculate_discount(195.44, 33.33, 10.55))
 
+    # Going to assume we never want to pay a customer to take merchandise
+    def test_discount_greater_than_cost(self):
+        self.assertTrue(0.00,calculate_discount(5, 0, 10))
+        self.assertTrue(0.00,calculate_discount(212.50, 150, 0))
+
 if __name__ == "__main__":
     unittest.main()
