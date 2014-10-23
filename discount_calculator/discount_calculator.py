@@ -15,7 +15,9 @@ def calculate_discount(item_cost, relative_discount, absolute_discount):
     else:
         discount = 0.00
 
-    discount += absolute_discount
+    if absolute_discount > 0.00:
+        discount += absolute_discount
+
     discounted_price = item_cost - discount
 
     if discounted_price < 0.00:
