@@ -1,15 +1,41 @@
 #!/bin/env python
 
+import argparse, sys
+
 def calculate_discount(item_cost, relative_discount, absolute_discount):
     total_discount = float(item_cost) * (1/float(relative_discount))
-    total_discount += float(absolute_discount)
+    total_discount -= float(absolute_discount)
     return float(item_cost) - total_discount
 
 
+def make_parser():
+    """ Construct the command line parser """
+    description = "Discount calculator"
+    parser = argparse.ArgumentParser(description=description)
+
+    parser.add_argument("cost", type=float, help="item cost")
+    parser.add_argument('-rd', '--relative-discount', type=float, help="discount by a percentage")
+    parser.add_argument('-ad', '--absolute-discount', type=float, help="discount by a dollar amount")
+
+    return parser
+
+
 def main():
-    item_cost_in = raw_input("Enter the cost of the item: ")
-    relative_discount_in = raw_input("Enter the relative discount percentage: ")
-    absolute_discount_in = raw_input("Enter additional discount in dollars: ")
+    parser = make_parser
+    arguments = parser.parse_args(sys.argv[1:])
+    # Convert parsed arguments from Namespace to dictionary
+    arguments = vars(arguments)
+    print "arguments: {}".format(arguments)
+    relative_discount_in = 0.0
+    absolute_discount_in = 0.0
+
+    item_cost_in = ["cost"]
+
+    if arguments["relative_discount"]:
+        relative_discount_in = arguments["relative_discount"]
+    if arguments["absolute_discount"]:
+        absolute_discount_in = arguments["absolute_discount"]
+
     print "${:,.2f}".format(calculate_discount(item_cost_in, relative_discount_in, absolute_discount_in))
 
 
