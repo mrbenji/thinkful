@@ -5,6 +5,11 @@ import argparse, sys
 
 
 def calculate_discount(item_cost, relative_discount, absolute_discount):
+
+    item_cost = float(item_cost)
+    relative_discount = float(relative_discount)
+    absolute_discount = float(absolute_discount)
+
     if relative_discount > 0.00:
         discount = item_cost * float(relative_discount/100)
     else:
