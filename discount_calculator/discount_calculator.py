@@ -4,10 +4,10 @@ import argparse, sys
 
 def calculate_discount(item_cost, relative_discount, absolute_discount):
     if relative_discount > 0.00:
-        total_discount = float(item_cost) * (1/float(relative_discount))
+        total_discount = float(item_cost) * float(relative_discount/100)
     else:
         total_discount = 0.00
-    total_discount -= float(absolute_discount)
+    total_discount += float(absolute_discount)
     return float(item_cost) - total_discount
 
 
