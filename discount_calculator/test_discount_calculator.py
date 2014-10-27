@@ -13,7 +13,7 @@ class DiscountCalculatorTests(unittest.TestCase):
         self.assertEqual(100, calculate_discount(200, 50, 0))
 
     def test_mixed_discounts(self):
-        self.assertTrue(140, calculate_discount(200, 25, 10))
+        self.assertEqual(140, calculate_discount(200, 25, 10))
         self.assertEqual(119.75, calculate_discount(195.44, 33.33, 10.55))
 
     # Assume we never want to pay a customer to take merchandise
@@ -25,6 +25,9 @@ class DiscountCalculatorTests(unittest.TestCase):
     def test_negative_discount(self):
         self.assertEqual(200, calculate_discount(200, -25, 0))
         self.assertEqual(17.99, calculate_discount(17.99, 0, -20))
+
+    def test_negative_cost(self):
+        self.assertEqual(0, calculate_discount(-10, 10, 5))
 
 if __name__ == "__main__":
     unittest.main()
