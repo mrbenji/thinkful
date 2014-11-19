@@ -102,3 +102,4 @@ $RECYCLE.BIN/
 *.msp
 env
 secret.py
+sql
