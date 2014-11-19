@@ -1,3 +1,5 @@
+# look into Nose, Coverage
+
 import unittest
 
 from discount_calculator import calculate_discount
