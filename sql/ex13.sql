@@ -2,7 +2,6 @@ ALTER TABLE person ADD COLUMN dead INTEGER;
 ALTER TABLE person ADD COLUMN phone_number TEXT;
 ALTER TABLE person ADD COLUMN salary FLOAT;
 ALTER TABLE person ADD COLUMN dob DATETIME;
-ALTER TABLE pet ADD COLUMN dob DATETIME;
 ALTER TABLE person_pet ADD COLUMN purchased_on DATETIME;
 ALTER TABLE pet ADD COLUMN parent INTEGER;
 
@@ -40,6 +39,6 @@ INSERT INTO person (id, first_name, last_name, age, dead, phone_number, salary, 
     SELECT 5, "Ivy", "Tittle", 12, 1, "310-555-9050", 0.00, "2002-07-02";
 
 INSERT INTO pet (id, name, breed, age, dead, dob, parent)
-    SELECT 4, "Lucky", "Bear", 1, 0, "2014-06-12", SELECT id FROM pet WHERE name = "Wilson"
+    SELECT 4, "Lucky", "Bear", 1, 0, "2014-06-12", (SELECT id FROM pet WHERE name = "Wilson")
     UNION ALL
-    SELECT 5, "Fluffy", "Bear", 0, 0, "2014-09-15", SELECT id FROM pet WHERE name = "Wilson";
+    SELECT 5, "Fluffy", "Bear", 0, 0, "2014-09-15", (SELECT id FROM pet WHERE name = "Wilson");
