@@ -12,7 +12,7 @@ except:
 
 curr = conn.cursor()
 
-cur.execute("""SELECT datname from pg_database""")
+curr.execute("""SELECT datname from pg_database""")
 rows = curr.fetchall()
 for row in rows:
     print "   ", row['notes'][1]
