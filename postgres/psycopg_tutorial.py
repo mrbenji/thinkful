@@ -15,5 +15,5 @@ curr = conn.cursor()
 curr.execute("""SELECT datname from pg_database""")
 rows = curr.fetchall()
 for row in rows:
-    print "   ", row['notes'][1]
+    print str(row['notes'])
 
