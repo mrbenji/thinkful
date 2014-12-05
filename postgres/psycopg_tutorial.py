@@ -9,3 +9,11 @@ try:
     conn = psycopg2.connect("dbname='pets' user='codio' host='localhost' password=''")
 except:
     print "I am unable to connect to the database"
+
+curr = conn.cursor()
+
+cur.execute("""SELECT datname from pg_database""")
+rows = curr.fetchall()
+for row in rows:
+    print "   ", row['notes'][1]
+
