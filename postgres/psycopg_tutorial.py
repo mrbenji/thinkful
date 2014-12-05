@@ -14,6 +14,7 @@ curr = conn.cursor()
 
 curr.execute("""SELECT datname from pg_database""")
 rows = curr.fetchall()
-for row in rows:
-    print str(row)
 
+print "\nShow me the databases:\n"
+for row in rows:
+    print "   ", row[0]
