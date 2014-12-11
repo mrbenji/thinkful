@@ -1,39 +1,36 @@
-#!/usr/local/env python
+#!/usr/bin/env python
 
 import sys
 import argparse
 import logging
 import csv
+import psycopg2
+
+logging.debug("Connecting to PostgreSQL")
+connection = psycopg2.connect("dbname='snippets' user='codio' host='localhost'")
+logging.debug("Database connection established.")
 
 # Set the log output file, and the log level
 logging.basicConfig(filename="output.log", level=logging.DEBUG)
 
 
-def get(name, filename="temp.csv"):
+def get(name):
     """ Print a snippet from a CSV file, based on an associated name. """
-    logging.info("Reading {} from {}".format(name, filename))
-    logging.debug("Opening a file")
-    with open(filename, "r") as f:
-        reader = csv.reader(f)
-        logging.debug("Reading snippet from file")
-        for line in reader:
-            logging.debug("line (list) = {}".format(line))
-            for key in line:
-                if key == name:
-                    logging.debug("Read successful")
-                    return name, line[1]
-    return name, None
+    logging.info("Reading snippet {!r}".format(name))
+    cursor = connection.cursor()
+    command = "select message from snippets where keyword='{}'".format(name)
+    cursor.execute(command)
+    return name, cursor.fetchone()[0]
 
 
-def put(name, snippet, filename="temp.csv"):
+def put(name, snippet):
     """ Store a snippet with an associated name in the CSV file """
-    logging.info("Writing {}:{} to {}".format(name, snippet, filename))
-    logging.debug("Opening file")
-    with open(filename, "a") as f:
-        writer = csv.writer(f)
-        logging.debug("Writing snippet to file")
-        writer.writerow([name, snippet])
-    logging.debug("Write successful")
+    logging.info("Storing snippet {!r}: {!r}".format(name, snippet))
+    cursor = connection.cursor()
+    command = "insert into snippets values (%s, %s)"
+    cursor.execute(command, (name, snippet))
+    connection.commit()
+    logging.debug("Snippet stored successfully.")
     return name, snippet
 
 
@@ -49,16 +46,12 @@ def make_parser():
     logging.debug("Constructing get subparser")
     get_parser = subparsers.add_parser("get", help="Print a snippet")
     get_parser.add_argument("name", help="The name of the snippet")
-    get_parser.add_argument("filename", default="snippets.csv", nargs="?",
-                            help="The snippet filename")
 
     # Subparser for the put command
     logging.debug("Constructing put subparser")
     put_parser = subparsers.add_parser("put", help="Store a snippet")
     put_parser.add_argument("name", help="The name of the snippet")
     put_parser.add_argument("snippet", help="The snippet text")
-    put_parser.add_argument("filename", default="snippets.csv", nargs="?",
-                            help="The snippet filename")
 
     return parser
 
