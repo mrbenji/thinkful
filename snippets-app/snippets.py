@@ -9,7 +9,7 @@ import csv
 logging.basicConfig(filename="output.log", level=logging.DEBUG)
 
 
-def get(name, filename):
+def get(name, filename="temp.csv"):
     """ Print a snippet from a CSV file, based on an associated name. """
     logging.info("Reading {} from {}".format(name, filename))
     logging.debug("Opening a file")
@@ -25,7 +25,7 @@ def get(name, filename):
     return name, None
 
 
-def put(name, snippet, filename):
+def put(name, snippet, filename="temp.csv"):
     """ Store a snippet with an associated name in the CSV file """
     logging.info("Writing {}:{} to {}".format(name, snippet, filename))
     logging.debug("Opening file")
