@@ -20,7 +20,13 @@ def get(name):
     cursor = connection.cursor()
     command = "select message from snippets where keyword='{}'".format(name)
     cursor.execute(command)
-    return name, cursor.fetchone()[0]
+    
+    row = cursor.fetchone()
+    
+    if not row:
+        return name, None
+    
+    return name, row[0]
 
 
 def put(name, snippet):
